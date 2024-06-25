@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxkm1dgigyi5v"]
+
+[ext_resource type="Texture2D" uid="uid://cu2etdhnrr13o" path="res://recursos/Rocky Roads/Backgrounds/mountains_a.png" id="1_54ly4"]
+[ext_resource type="Script" path="res://escenas/fondo/fondo.gd" id="1_urc1f"]
+
+[node name="Fondo" type="ParallaxBackground"]
+script = ExtResource("1_urc1f")
+color_fondo = Color(0.47113, 0.762942, 0.916123, 1)
+imagen_fondo = ExtResource("1_54ly4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47113, 0.762942, 0.916123, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(256, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(0, 17)
+texture = ExtResource("1_54ly4")
+centered = false
