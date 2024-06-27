@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Amiguitos Monederos"
-run/main_scene="res://escenas/niveles/nivel1/nivel_1.tscn"
+run/main_scene="res://niveles/nivel1/nivel_1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,15 @@ window/size/resizable=false
 window/size/window_width_override=1200
 window/size/window_height_override=675
 window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="Jugador"
+2d_physics/layer_2="Terreno"
+2d_physics/layer_3="Recolectable"
+2d_physics/layer_4="Enemigo"
+2d_physics/layer_5="Zona de Muerte"
+2d_physics/layer_6="Punto de Aparicion"
 
 [rendering]
 

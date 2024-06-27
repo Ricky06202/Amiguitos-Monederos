@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxkm1dgigyi5v"]
 
 [ext_resource type="Texture2D" uid="uid://cu2etdhnrr13o" path="res://recursos/Rocky Roads/Backgrounds/mountains_a.png" id="1_54ly4"]
-[ext_resource type="Script" path="res://escenas/fondo/fondo.gd" id="1_urc1f"]
+[ext_resource type="Script" path="res://componentes/fondo/fondo.gd" id="1_urc1f"]
 
 [node name="Fondo" type="ParallaxBackground"]
 script = ExtResource("1_urc1f")

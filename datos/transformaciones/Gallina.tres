@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="Transformacion" load_steps=13 format=3 uid="uid://ckqxhn34mv0y6"]
+
+[ext_resource type="Script" path="res://datos/transformaciones/transformacion.gd" id="1_sy5ou"]
+[ext_resource type="Texture2D" uid="uid://dvirec8v7rg60" path="res://recursos/Rocky Roads/Enemies/chicken.png" id="1_vto0b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ppkf"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihxi7"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy65d"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt7w1"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u821j"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl7gq"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63jbs"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggjix"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4xwi"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhlkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ppkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihxi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy65d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt7w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u821j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl7gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63jbs")
+}],
+"loop": true,
+"name": &"Avanzar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggjix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4xwi")
+}],
+"loop": true,
+"name": &"Quieto",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_sy5ou")
+animacion = SubResource("SpriteFrames_fhlkr")
+hay_que_volterarla = true
+cantidad_saltos = 2
+puede_bucear = false

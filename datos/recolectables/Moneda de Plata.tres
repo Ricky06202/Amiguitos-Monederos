@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="Recolectable" load_steps=12 format=3 uid="uid://llwn3x8kp5uw"]
+
+[ext_resource type="Texture2D" uid="uid://4yidmsagl0kg" path="res://recursos/Rocky Roads/Objects/coin_silver.png" id="1_85x63"]
+[ext_resource type="Script" path="res://datos/recolectables/recolectable.gd" id="1_lcqro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhwjs"]
+atlas = ExtResource("1_85x63")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnq5i"]
+atlas = ExtResource("1_85x63")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx3xk"]
+atlas = ExtResource("1_85x63")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o2j6"]
+atlas = ExtResource("1_85x63")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il0xd"]
+atlas = ExtResource("1_85x63")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20vah"]
+atlas = ExtResource("1_85x63")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4qlh"]
+atlas = ExtResource("1_85x63")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ksga"]
+atlas = ExtResource("1_85x63")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x1nc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhwjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnq5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx3xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o2j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il0xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20vah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4qlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ksga")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_lcqro")
+animacion = SubResource("SpriteFrames_x1nc6")
+puntos = 25

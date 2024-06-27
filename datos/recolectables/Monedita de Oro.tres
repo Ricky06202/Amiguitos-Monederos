@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="Recolectable" load_steps=10 format=3 uid="uid://njuhgmep6t8j"]
+
+[ext_resource type="Script" path="res://datos/recolectables/recolectable.gd" id="1_0wdcc"]
+[ext_resource type="Texture2D" uid="uid://cxmpuxm5tqnhv" path="res://recursos/Rocky Roads/Objects/coin_small_gold.png" id="1_81kyv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h28ob"]
+atlas = ExtResource("1_81kyv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk1pc"]
+atlas = ExtResource("1_81kyv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5xgt"]
+atlas = ExtResource("1_81kyv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7xem"]
+atlas = ExtResource("1_81kyv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq0ka"]
+atlas = ExtResource("1_81kyv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xt2a"]
+atlas = ExtResource("1_81kyv")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiu0a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h28ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk1pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5xgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7xem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq0ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xt2a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_0wdcc")
+animacion = SubResource("SpriteFrames_jiu0a")
+puntos = 10
