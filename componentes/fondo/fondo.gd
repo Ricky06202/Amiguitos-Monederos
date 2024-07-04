@@ -8,15 +8,22 @@ extends ParallaxBackground
 	set(c):
 		color_fondo = c
 		if nodo_color:
-			nodo_color.color = color_fondo
-
+			inicializar_color()
 @export var imagen_fondo: Texture2D:
 	set(i):
 		imagen_fondo = i
 		if nodo_imagen:
-			nodo_imagen.texture = imagen_fondo
-
+			inicializar_imagen()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	inicializar()
+
+func inicializar():
+	inicializar_color()
+	inicializar_imagen()
+
+func inicializar_color():
 	nodo_color.color = color_fondo
+
+func inicializar_imagen():
 	nodo_imagen.texture = imagen_fondo

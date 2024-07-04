@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxeqg3e5shmwq"]
+[gd_scene load_steps=10 format=3 uid="uid://cxeqg3e5shmwq"]
 
 [ext_resource type="PackedScene" uid="uid://dxkm1dgigyi5v" path="res://componentes/fondo/fondo.tscn" id="1_352is"]
 [ext_resource type="Script" path="res://niveles/nivel1/CharacterBody2D.gd" id="3_7kkn2"]
+[ext_resource type="Resource" uid="uid://llwn3x8kp5uw" path="res://datos/recolectables/Moneda de Plata.tres" id="3_i8l10"]
 [ext_resource type="PackedScene" uid="uid://cjki6oa0kc000" path="res://componentes/terreno/terreno.tscn" id="3_unc82"]
+[ext_resource type="Resource" uid="uid://cjdttytfjvk2d" path="res://datos/recolectables/Rana.tres" id="4_khkei"]
+[ext_resource type="Resource" uid="uid://c2l6l8jk1045h" path="res://datos/recolectables/Gallina.tres" id="4_pawul"]
+[ext_resource type="PackedScene" uid="uid://du67jm07eq6or" path="res://componentes/recolectable/recolectable.tscn" id="4_u44xd"]
+[ext_resource type="Resource" uid="uid://dxhgt27m3dm07" path="res://datos/recolectables/Raton.tres" id="5_3keyw"]
+[ext_resource type="Resource" uid="uid://bmikje40vkdqa" path="res://datos/recolectables/Moneda de Oro.tres" id="5_m0xme"]
 
 [node name="Nivel1" type="Node2D"]
 texture_filter = 1
@@ -13,7 +19,28 @@ script = ExtResource("3_7kkn2")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
+[node name="Recolectable" parent="CharacterBody2D" instance=ExtResource("4_u44xd")]
+position = Vector2(47, -19)
+recolectable = ExtResource("3_i8l10")
+
+[node name="Recolectable" parent="CharacterBody2D/Recolectable" instance=ExtResource("4_u44xd")]
+position = Vector2(-52, 23)
+recolectable = ExtResource("4_pawul")
+
+[node name="Recolectable2" parent="CharacterBody2D/Recolectable" instance=ExtResource("4_u44xd")]
+position = Vector2(-28, 23)
+recolectable = ExtResource("5_3keyw")
+
+[node name="Recolectable3" parent="CharacterBody2D/Recolectable" instance=ExtResource("4_u44xd")]
+position = Vector2(-78, 23)
+recolectable = ExtResource("4_khkei")
+
 [node name="Fondo" parent="." instance=ExtResource("1_352is")]
+color_fondo = Color(0.5576, 0.747767, 0.883788, 1)
 
 [node name="Terreno" parent="." instance=ExtResource("3_unc82")]
 layer_0/tile_data = PackedInt32Array(589839, 327680, 3, 524303, 327680, 3, 458767, 327680, 2, 589838, 131072, 3, 524302, 196608, 3, 458766, 196608, 1, 589837, 196608, 2, 524301, 196608, 3, 458765, 196608, 1, 589836, 262144, 3, 524300, 196608, 3, 458764, 196608, 1, 589835, 262144, 3, 524299, 131072, 3, 458763, 196608, 1, 589834, 196608, 3, 524298, 196608, 2, 458762, 196608, 1, 589833, 196608, 3, 524297, 262144, 3, 458761, 196608, 1, 589832, 196608, 3, 524296, 196608, 3, 458760, 196608, 1, 589831, 131072, 3, 524295, 196608, 2, 458759, 196608, 1, 589830, 262144, 3, 524294, 262144, 3, 458758, 196608, 1, 589829, 196608, 3, 524293, 196608, 2, 458757, 196608, 1, 589828, 262144, 3, 524292, 131072, 3, 458756, 196608, 1, 589827, 131072, 3, 524291, 131072, 3, 458755, 196608, 1, 589826, 196608, 2, 524290, 196608, 2, 458754, 196608, 1, 589825, 131072, 3, 524289, 262144, 3, 458753, 196608, 1, 589824, 65536, 3, 524288, 65536, 3, 458752, 65536, 2, 655375, 327680, 4, 655374, 196608, 4, 655373, 262144, 4, 655372, 196608, 4, 655371, 196608, 4, 655370, 262144, 4, 655369, 196608, 4, 655368, 196608, 4, 655367, 262144, 4, 655366, 196608, 4, 655365, 262144, 4, 655364, 262144, 4, 655363, 196608, 4, 655362, 262144, 4, 655361, 131072, 4, 655360, 65536, 4, 393217, 131072, 0, 393226, 262144, 0, 393229, 327680, 1, 393225, 196608, 0, 393221, 262144, 0, 393219, 327680, 1)
+
+[node name="Recolectable" parent="." instance=ExtResource("4_u44xd")]
+position = Vector2(69, 16)
+recolectable = ExtResource("5_m0xme")

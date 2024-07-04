@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://du67jm07eq6or"]
+
+[ext_resource type="Script" path="res://componentes/recolectable/recolectable.gd" id="1_wlj8w"]
+[ext_resource type="Texture2D" uid="uid://ciqb2bbe1x23v" path="res://recursos/Basic GUI/ButtonsIcons/IconButton_Large_Blue_Rounded.png" id="2_6mrfi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rgad1"]
+radius = 7.0
+
+[node name="Recolectable" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_wlj8w")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.0468333, 0.0468333)
+texture = ExtResource("2_6mrfi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rgad1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

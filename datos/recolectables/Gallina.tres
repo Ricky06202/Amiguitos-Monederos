@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Recolectable" load_steps=14 format=3 uid="uid://c2l6l8jk1045h"]
 
-[ext_resource type="Script" path="res://datos/recolectables/recolectable.gd" id="1_rw0m4"]
+[ext_resource type="Script" path="res://datos/recolectable.gd" id="1_rw0m4"]
 [ext_resource type="Texture2D" uid="uid://dvirec8v7rg60" path="res://recursos/Rocky Roads/Enemies/chicken.png" id="1_slbfu"]
 [ext_resource type="Resource" uid="uid://ckqxhn34mv0y6" path="res://datos/transformaciones/Gallina.tres" id="2_1xrhh"]
 
@@ -66,7 +66,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Avanzar",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -77,12 +77,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"Quieto",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [resource]
 script = ExtResource("1_rw0m4")
 animacion = SubResource("SpriteFrames_fhlkr")
+escala = 0.6
+posicionY = -5
 puntos = 100
-es_una_habilidad = true
 transformacion = ExtResource("2_1xrhh")

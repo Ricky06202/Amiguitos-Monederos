@@ -9,3 +9,7 @@ var puntos: int
 var siguiente_nivel: PackedScene
 
 var punto_de_control_actual: Node2D
+
+func reiniciar():
+	vidas = 3
+	puntos = 0

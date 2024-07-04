@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Transformacion" load_steps=13 format=3 uid="uid://ckqxhn34mv0y6"]
 
-[ext_resource type="Script" path="res://datos/transformaciones/transformacion.gd" id="1_sy5ou"]
+[ext_resource type="Script" path="res://datos/transformacion.gd" id="1_sy5ou"]
 [ext_resource type="Texture2D" uid="uid://dvirec8v7rg60" path="res://recursos/Rocky Roads/Enemies/chicken.png" id="1_vto0b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ppkf"]
@@ -65,7 +65,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Avanzar",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -76,7 +76,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Quieto",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [resource]

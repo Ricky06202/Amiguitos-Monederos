@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Transformacion" load_steps=10 format=3 uid="uid://c5xa750ark2dr"]
 
 [ext_resource type="Texture2D" uid="uid://bc3ur42iinwtu" path="res://recursos/Rocky Roads/Enemies/bear_polar.png" id="1_7p7hh"]
-[ext_resource type="Script" path="res://datos/transformaciones/transformacion.gd" id="1_lbm05"]
+[ext_resource type="Script" path="res://datos/transformacion.gd" id="1_lbm05"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_03hfh"]
 atlas = ExtResource("1_7p7hh")

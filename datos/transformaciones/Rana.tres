@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Transformacion" load_steps=38 format=3 uid="uid://b77c2wfm4afqx"]
 
-[ext_resource type="Script" path="res://datos/transformaciones/transformacion.gd" id="1_flc48"]
+[ext_resource type="Script" path="res://datos/transformacion.gd" id="1_flc48"]
 [ext_resource type="Texture2D" uid="uid://cjex22144jr2h" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Run (32x32).png" id="1_wi6fk"]
 [ext_resource type="Texture2D" uid="uid://dixeegwg7rl03" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Fall (32x32).png" id="2_duv7g"]
 [ext_resource type="Texture2D" uid="uid://eeykeae551fo" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Idle (32x32).png" id="3_o7lqp"]
@@ -168,7 +168,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Avanzar",
-"speed": 5.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -214,7 +214,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Quieto",
-"speed": 5.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -248,7 +248,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Sufrir",
-"speed": 5.0
+"speed": 18.0
 }]
 
 [resource]

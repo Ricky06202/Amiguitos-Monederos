@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Recolectable" load_steps=12 format=3 uid="uid://bmikje40vkdqa"]
 
 [ext_resource type="Texture2D" uid="uid://b5ssf25rqdqjx" path="res://recursos/Rocky Roads/Objects/coin_gold.png" id="1_ox4vr"]
-[ext_resource type="Script" path="res://datos/recolectables/recolectable.gd" id="2_815xg"]
+[ext_resource type="Script" path="res://datos/recolectable.gd" id="2_815xg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j030y"]
 atlas = ExtResource("1_ox4vr")
@@ -64,10 +64,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [resource]
 script = ExtResource("2_815xg")
 animacion = SubResource("SpriteFrames_fhaky")
+escala = 1.0
+posicionY = 0
 puntos = 50

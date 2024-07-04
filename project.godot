@@ -15,6 +15,10 @@ run/main_scene="res://niveles/nivel1/nivel_1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Estado="*res://datos/global/estado.gd"
+
 [display]
 
 window/size/viewport_width=256

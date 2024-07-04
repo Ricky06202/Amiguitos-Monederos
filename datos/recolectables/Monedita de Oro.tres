@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Recolectable" load_steps=10 format=3 uid="uid://njuhgmep6t8j"]
 
-[ext_resource type="Script" path="res://datos/recolectables/recolectable.gd" id="1_0wdcc"]
+[ext_resource type="Script" path="res://datos/recolectable.gd" id="1_0wdcc"]
 [ext_resource type="Texture2D" uid="uid://cxmpuxm5tqnhv" path="res://recursos/Rocky Roads/Objects/coin_small_gold.png" id="1_81kyv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h28ob"]
@@ -50,10 +50,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [resource]
 script = ExtResource("1_0wdcc")
 animacion = SubResource("SpriteFrames_jiu0a")
+escala = 1.0
+posicionY = 0
 puntos = 10

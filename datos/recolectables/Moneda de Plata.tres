@@ -1,73 +1,75 @@
 [gd_resource type="Resource" script_class="Recolectable" load_steps=12 format=3 uid="uid://llwn3x8kp5uw"]
 
 [ext_resource type="Texture2D" uid="uid://4yidmsagl0kg" path="res://recursos/Rocky Roads/Objects/coin_silver.png" id="1_85x63"]
-[ext_resource type="Script" path="res://datos/recolectables/recolectable.gd" id="1_lcqro"]
+[ext_resource type="Script" path="res://datos/recolectable.gd" id="1_lcqro"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhwjs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p06vk"]
 atlas = ExtResource("1_85x63")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fnq5i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jljaf"]
 atlas = ExtResource("1_85x63")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(16, 0, 14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qx3xk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7846"]
 atlas = ExtResource("1_85x63")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(32, 0, 14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5o2j6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk270"]
 atlas = ExtResource("1_85x63")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(48, 0, 14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_il0xd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cm2a"]
 atlas = ExtResource("1_85x63")
-region = Rect2(64, 0, 16, 16)
+region = Rect2(64, 0, 14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_20vah"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd7wa"]
 atlas = ExtResource("1_85x63")
-region = Rect2(80, 0, 16, 16)
+region = Rect2(80, 0, 14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4qlh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sufx"]
 atlas = ExtResource("1_85x63")
-region = Rect2(96, 0, 16, 16)
+region = Rect2(96, 0, 14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ksga"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7le2"]
 atlas = ExtResource("1_85x63")
-region = Rect2(112, 0, 16, 16)
+region = Rect2(112, 0, 14, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x1nc6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jhwjs")
+"texture": SubResource("AtlasTexture_p06vk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fnq5i")
+"texture": SubResource("AtlasTexture_jljaf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qx3xk")
+"texture": SubResource("AtlasTexture_t7846")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5o2j6")
+"texture": SubResource("AtlasTexture_uk270")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_il0xd")
+"texture": SubResource("AtlasTexture_5cm2a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_20vah")
+"texture": SubResource("AtlasTexture_qd7wa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q4qlh")
+"texture": SubResource("AtlasTexture_4sufx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ksga")
+"texture": SubResource("AtlasTexture_t7le2")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [resource]
 script = ExtResource("1_lcqro")
 animacion = SubResource("SpriteFrames_x1nc6")
+escala = 1.0
+posicionY = 0
 puntos = 25
