@@ -5,7 +5,8 @@ class_name Recolectable
 @export var animacion: SpriteFrames
 @export var escala: float = 1
 @export var posicionY: int = 0
-@export var puntos: int
+@export var esDinero: bool = false
+@export var valor: int
 
 @export_category("Transformacion")
 var es_una_habilidad: bool = !!transformacion

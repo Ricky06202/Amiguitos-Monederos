@@ -33,6 +33,5 @@ func _on_body_entered(_body:Node2D):
 	obtenerMoneda()
 
 func obtenerMoneda():
-	Estado.puntos += recolectable.puntos
 	#todo   particulas y sonido
 	queue_free()

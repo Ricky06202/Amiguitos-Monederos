@@ -1,29 +1,23 @@
 [gd_scene load_steps=10 format=3 uid="uid://87nw15kas0uj"]
 
-[ext_resource type="Texture2D" uid="uid://big01avhq52nf" path="res://Rocky Roads/Enemies/bear_brown.png" id="1_17g8s"]
+[ext_resource type="Script" path="res://componentes/enemigo/enemigo.gd" id="1_fxtdm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rb4tr"]
-atlas = ExtResource("1_17g8s")
 region = Rect2(0, 16, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g32n0"]
-atlas = ExtResource("1_17g8s")
 region = Rect2(32, 16, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2uhbd"]
-atlas = ExtResource("1_17g8s")
 region = Rect2(0, 42, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lki2m"]
-atlas = ExtResource("1_17g8s")
 region = Rect2(32, 42, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gd50w"]
-atlas = ExtResource("1_17g8s")
 region = Rect2(64, 42, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mp3hf"]
-atlas = ExtResource("1_17g8s")
 region = Rect2(96, 42, 32, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7uvc6"]
@@ -57,18 +51,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q317o"]
-size = Vector2(25, 20)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i5jci"]
 
 [node name="Enemy1" type="CharacterBody2D"]
+script = ExtResource("1_fxtdm")
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7uvc6")
 animation = &"Move"
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 1)
-shape = SubResource("RectangleShape2D_q317o")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i5jci")
 
 [node name="EnemyAnimation" type="AnimationPlayer" parent="."]
 

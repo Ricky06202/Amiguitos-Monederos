@@ -58,4 +58,5 @@ script = ExtResource("1_0no7w")
 animacion = SubResource("SpriteFrames_dl2mw")
 escala = 1.0
 posicionY = 0
-puntos = 5
+esDinero = true
+valor = 1

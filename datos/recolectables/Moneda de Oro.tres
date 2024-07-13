@@ -72,4 +72,5 @@ script = ExtResource("2_815xg")
 animacion = SubResource("SpriteFrames_fhaky")
 escala = 1.0
 posicionY = 0
-puntos = 50
+esDinero = true
+valor = 7
