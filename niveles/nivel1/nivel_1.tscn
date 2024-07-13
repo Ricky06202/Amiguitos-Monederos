@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxeqg3e5shmwq"]
+[gd_scene load_steps=11 format=3 uid="uid://cxeqg3e5shmwq"]
 
 [ext_resource type="PackedScene" uid="uid://dxkm1dgigyi5v" path="res://componentes/fondo/fondo.tscn" id="1_352is"]
 [ext_resource type="Script" path="res://niveles/nivel1/CharacterBody2D.gd" id="3_7kkn2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://du67jm07eq6or" path="res://componentes/recolectable/recolectable.tscn" id="4_u44xd"]
 [ext_resource type="Resource" uid="uid://dxhgt27m3dm07" path="res://datos/recolectables/Raton.tres" id="5_3keyw"]
 [ext_resource type="Resource" uid="uid://bmikje40vkdqa" path="res://datos/recolectables/Moneda de Oro.tres" id="5_m0xme"]
+[ext_resource type="PackedScene" uid="uid://coed18knxvhp3" path="res://componentes/jugador/jugador.tscn" id="7_23sow"]
 
 [node name="Nivel1" type="Node2D"]
 texture_filter = 1
@@ -19,22 +20,6 @@ script = ExtResource("3_7kkn2")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
-[node name="Recolectable" parent="CharacterBody2D" instance=ExtResource("4_u44xd")]
-position = Vector2(47, -19)
-recolectable = ExtResource("3_i8l10")
-
-[node name="Recolectable" parent="CharacterBody2D/Recolectable" instance=ExtResource("4_u44xd")]
-position = Vector2(-52, 23)
-recolectable = ExtResource("4_pawul")
-
-[node name="Recolectable2" parent="CharacterBody2D/Recolectable" instance=ExtResource("4_u44xd")]
-position = Vector2(-28, 23)
-recolectable = ExtResource("5_3keyw")
-
-[node name="Recolectable3" parent="CharacterBody2D/Recolectable" instance=ExtResource("4_u44xd")]
-position = Vector2(-78, 23)
-recolectable = ExtResource("4_khkei")
-
 [node name="Fondo" parent="." instance=ExtResource("1_352is")]
 color_fondo = Color(0.5576, 0.747767, 0.883788, 1)
 
@@ -44,3 +29,23 @@ layer_0/tile_data = PackedInt32Array(589839, 327680, 3, 524303, 327680, 3, 45876
 [node name="Recolectable" parent="." instance=ExtResource("4_u44xd")]
 position = Vector2(69, 16)
 recolectable = ExtResource("5_m0xme")
+
+[node name="Player" parent="." instance=ExtResource("7_23sow")]
+position = Vector2(44, 111.978)
+velocity = Vector2(0, 0)
+
+[node name="Recolectable2" parent="." instance=ExtResource("4_u44xd")]
+position = Vector2(123, 77)
+recolectable = ExtResource("4_pawul")
+
+[node name="Recolectable3" parent="." instance=ExtResource("4_u44xd")]
+position = Vector2(147, 77)
+recolectable = ExtResource("5_3keyw")
+
+[node name="Recolectable4" parent="." instance=ExtResource("4_u44xd")]
+position = Vector2(97, 77)
+recolectable = ExtResource("4_khkei")
+
+[node name="Recolectable5" parent="." instance=ExtResource("4_u44xd")]
+position = Vector2(175, 54)
+recolectable = ExtResource("3_i8l10")
