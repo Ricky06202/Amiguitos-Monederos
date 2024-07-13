@@ -37,10 +37,13 @@ func _physics_process(delta):
 	if not esta_en_el_mundo: return
 	update_animations()
 	flip()
+	#cuando estamos ejecutando el juego
 	if not Engine.is_editor_hint():
 		jump()
 		move_x()
 		aplicar_gravedad(delta)
+		
+	#cuando estamos editando el juego
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and  Engine.is_editor_hint():
 		aplicar_gravedad(delta)
 	move_and_slide()

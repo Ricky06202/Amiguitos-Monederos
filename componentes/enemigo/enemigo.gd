@@ -1,29 +1,63 @@
+@tool
 extends CharacterBody2D
+
+@export var enemigo: Enemigo:
+	set(e):
+		enemigo = e
+		inicializar()
 
 @export var move_speed: float
 var direction: float
-@onready var enemy_sprite = $EnemySprite
+@onready var animacion = get_node("EnemySprite")
+@onready var colision = get_node("EnemyCollision")
 var is_facing_right = true
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravedad = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func inicializar():
+	if animacion:
+		animacion.sprite_frames = enemigo.animacion
+		animacion.play("Quieto")
+		animacion.flip_h = enemigo.hay_que_volterarla
+		animacion.position = enemigo.posicion_animacion
+	if colision:
+		var capsula = colision.shape as CapsuleShape2D
+		capsula.radius = enemigo.radio
+		capsula.height = enemigo.altura
+		colision.position = enemigo.posicion_colision
+		colision.rotation_degrees = enemigo.rotacion
+
+var esta_en_el_mundo = false
+
+func _ready():
+	inicializar()
+	esta_en_el_mundo = true
 
 func _physics_process(delta):
+	if not esta_en_el_mundo: return
 	update_animations_enemy()
 	flip_enemy()
-	move_enemy(delta)	
+	#cuando estamos ejecutando el juego
+	if not Engine.is_editor_hint():
+		move_enemy()	
+		aplicar_gravedad(delta)
+
+	#cuando estamos editando el juego
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and  Engine.is_editor_hint():
+		aplicar_gravedad(delta)
 	move_and_slide() 
 
 func update_animations_enemy():
 	if velocity.x:
-		enemy_sprite.play("Move")
+		animacion.play("Avanzar")
 	else:
-		enemy_sprite.play("Idle")
+		animacion.play("Quieto")
 
 func flip_enemy():
 	if is_facing_right and velocity.x < 0 or (not is_facing_right and velocity.x > 0): 
 		scale.x *= -1
 		is_facing_right = not is_facing_right
 
-func move_enemy(delta):
+func move_enemy():
 	if is_on_wall() or not $LeftCollision.is_colliding() or not $RightCollision.is_colliding():
 		direction = -direction
 	elif velocity.x > 0:
@@ -32,4 +66,7 @@ func move_enemy(delta):
 		direction = -1
 	
 	velocity.x = direction * move_speed
-	velocity.y += gravity * delta
+
+func aplicar_gravedad(delta):
+	if not is_on_floor():
+		velocity.y += gravedad * delta
