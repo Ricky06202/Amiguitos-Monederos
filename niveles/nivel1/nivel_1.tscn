@@ -31,7 +31,7 @@ position = Vector2(69, 16)
 recolectable = ExtResource("5_m0xme")
 
 [node name="Player" parent="." instance=ExtResource("7_23sow")]
-position = Vector2(44, 111.999)
+position = Vector2(44, 111.978)
 velocity = Vector2(0, 0)
 
 [node name="Recolectable2" parent="." instance=ExtResource("4_u44xd")]
