@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlmfue4f2gyf6"]
+
+[ext_resource type="PackedScene" uid="uid://dxkm1dgigyi5v" path="res://componentes/fondo/fondo.tscn" id="1_allsh"]
+[ext_resource type="Texture2D" uid="uid://1f52ptropufo" path="res://recursos/Rocky Roads/Backgrounds/mountains_b.png" id="2_c13ls"]
+[ext_resource type="PackedScene" uid="uid://cjki6oa0kc000" path="res://componentes/terreno/terreno.tscn" id="3_4lxaf"]
+
+[node name="nivel_lava" type="Node2D"]
+
+[node name="Fondo" parent="." instance=ExtResource("1_allsh")]
+color_fondo = Color(0.72108, 0.289066, 0.224087, 1)
+imagen_fondo = ExtResource("2_c13ls")
+
+[node name="Terreno" parent="." instance=ExtResource("3_4lxaf")]
