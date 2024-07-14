@@ -26,31 +26,30 @@ func inicializar():
 		colision.position = enemigo.posicion_colision
 		colision.rotation_degrees = enemigo.rotacion
 
-var esta_en_el_mundo = false
-
 func _ready():
 	inicializar()
-	esta_en_el_mundo = true
 
 func _physics_process(delta):
-	if not esta_en_el_mundo: return
 	update_animations_enemy()
 	flip_enemy()
 	#cuando estamos ejecutando el juego
 	if not Engine.is_editor_hint():
 		move_enemy()	
 		aplicar_gravedad(delta)
+		move_and_slide() 
 
 	#cuando estamos editando el juego
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and  Engine.is_editor_hint():
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and  Engine.is_editor_hint() and not is_instance_of(get_parent(), SubViewport):
 		aplicar_gravedad(delta)
-	move_and_slide() 
+		move_and_slide() 
 
 func update_animations_enemy():
 	if velocity.x:
-		animacion.play("Avanzar")
+		if animacion.sprite_frames.has_animation("Avanzar"):
+			animacion.play("Avanzar")
 	else:
-		animacion.play("Quieto")
+		if animacion.sprite_frames.has_animation("Quieto"):
+			animacion.play("Quieto")
 
 func flip_enemy():
 	if is_facing_right and velocity.x < 0 or (not is_facing_right and velocity.x > 0): 

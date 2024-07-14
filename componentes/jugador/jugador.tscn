@@ -258,7 +258,7 @@ height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 62
-velocity = Vector2(0, 346794)
+velocity = Vector2(0, 784243)
 script = ExtResource("1_hlt0w")
 transformacion_actual = ExtResource("2_o0skf")
 move_speed = 100.0
@@ -266,7 +266,8 @@ jump_speed = 300.0
 
 [node name="Animacion" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b0cy4")
-animation = &"Quieto"
+animation = &"Caer"
+frame_progress = 0.647491
 offset = Vector2(0, -16)
 
 [node name="Colision" type="CollisionShape2D" parent="."]

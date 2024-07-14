@@ -27,14 +27,11 @@ func inicializar():
 		colision.position = transformacion_actual.posicion_colision
 		colision.rotation_degrees = transformacion_actual.rotacion
 
-var esta_en_el_mundo = false
 
 func _ready():
 	inicializar()
-	esta_en_el_mundo = true
 
 func _physics_process(delta):
-	if not esta_en_el_mundo: return
 	update_animations()
 	flip()
 	#cuando estamos ejecutando el juego
@@ -42,11 +39,12 @@ func _physics_process(delta):
 		jump()
 		move_x()
 		aplicar_gravedad(delta)
+		move_and_slide()
 		
 	#cuando estamos editando el juego
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and  Engine.is_editor_hint():
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Engine.is_editor_hint() and not is_instance_of(get_parent(), SubViewport):
 		aplicar_gravedad(delta)
-	move_and_slide()
+		move_and_slide()
 
 func update_animations():
 	if not is_on_floor():

@@ -5,6 +5,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i5jci"]
 
 [node name="Enemy1" type="CharacterBody2D"]
+velocity = Vector2(0, 23961.2)
 script = ExtResource("1_fxtdm")
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="."]
