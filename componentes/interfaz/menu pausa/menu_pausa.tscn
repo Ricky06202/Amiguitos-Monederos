@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://ehc510jydbt0"]
+
+[ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_p7ubf"]
+[ext_resource type="Script" path="res://componentes/interfaz/menu pausa/menu_pausa.gd" id="2_clklb"]
+[ext_resource type="FontFile" uid="uid://btf7wssbwspfr" path="res://recursos/Tipografias/friendly-monster/FriendlyMonster-lgr0X.otf" id="3_jvcgt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8wu4g"]
+font = ExtResource("3_jvcgt")
+font_size = 20
+
+[node name="Menu Pausa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p7ubf")
+script = ExtResource("2_clklb")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Juego Pausado"
+label_settings = SubResource("LabelSettings_8wu4g")
+horizontal_alignment = 1
+
+[node name="Volver al Punto de Control" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volver al Punto de Control"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Guia" type="Button" parent="Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Guia"
+
+[node name="Continuar" type="Button" parent="Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Continuar"
+
+[node name="Salir al Menu Principal" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Salir al Menu Principal"
+
+[connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/HBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/Salir al Menu Principal" to="." method="_on_salir_al_menu_principal_pressed"]

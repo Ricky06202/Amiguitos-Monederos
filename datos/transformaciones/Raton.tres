@@ -44,7 +44,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Avanzar",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -55,11 +55,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"Quieto",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [resource]
 script = ExtResource("1_lbm05")
+nombre = "Raton"
 animacion = SubResource("SpriteFrames_6hhvu")
 hay_que_volterarla = false
 posicion_animacion = Vector2(0, 0)

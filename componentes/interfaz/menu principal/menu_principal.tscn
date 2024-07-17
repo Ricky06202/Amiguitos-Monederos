@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnox6gjttnn2c"]
+
+[ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_mrygd"]
+[ext_resource type="Script" path="res://componentes/interfaz/menu principal/menu_principal.gd" id="2_3wvht"]
+[ext_resource type="Texture2D" uid="uid://bobypyg0s43h4" path="res://recursos/Fondos Generados/Designer.jpeg" id="2_5ug01"]
+[ext_resource type="FontFile" uid="uid://btf7wssbwspfr" path="res://recursos/Tipografias/friendly-monster/FriendlyMonster-lgr0X.otf" id="3_a31ly"]
+[ext_resource type="PackedScene" uid="uid://cm162s67rl4et" path="res://niveles/Nivel_bosque/nivel_bosque.tscn" id="3_a38fa"]
+[ext_resource type="FontFile" uid="uid://c3xlnytn34h27" path="res://recursos/Tipografias/zt-shago/ZtShago-Black.ttf" id="4_3mu65"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fyv1j"]
+font = ExtResource("3_a31ly")
+font_size = 25
+outline_size = 1
+outline_color = Color(0.250335, 0.291211, 0.545494, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtsiq"]
+line_spacing = -1.0
+font = ExtResource("4_3mu65")
+font_size = 4
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Menu Principal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mrygd")
+script = ExtResource("2_3wvht")
+nivel_a_cargar = ExtResource("3_a38fa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5ug01")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -72.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer"]
+layout_mode = 2
+text = "Amiguitos Monederos"
+label_settings = SubResource("LabelSettings_fyv1j")
+
+[node name="CenterContainer2" type="CenterContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TextureRect/CenterContainer2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Jugar" type="Button" parent="TextureRect/CenterContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Jugar"
+
+[node name="Salir" type="Button" parent="TextureRect/CenterContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Salir"
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -19.0
+offset_right = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Ricardo Sanjur
+Azner Aparicio
+Julio 2024"
+label_settings = SubResource("LabelSettings_gtsiq")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="pressed" from="TextureRect/CenterContainer2/VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="TextureRect/CenterContainer2/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
