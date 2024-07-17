@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq248r3i0uema"]
+
+[ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_povgj"]
+[ext_resource type="Script" path="res://componentes/interfaz/selector de transformacion/selector_de_transformacion.gd" id="2_ghky3"]
+[ext_resource type="PackedScene" uid="uid://cqfmdm7rqaqk7" path="res://componentes/boton transformacion/boton_transformacion.tscn" id="2_pta7s"]
+[ext_resource type="Resource" uid="uid://cfcsbtrkvrgix" path="res://datos/transformaciones/Humano.tres" id="3_tahss"]
+[ext_resource type="Resource" uid="uid://ckqxhn34mv0y6" path="res://datos/transformaciones/Gallina.tres" id="5_4fl5n"]
+[ext_resource type="Resource" uid="uid://b77c2wfm4afqx" path="res://datos/transformaciones/Rana.tres" id="6_fds6h"]
+
+[node name="Selector de Transformacion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_povgj")
+script = ExtResource("2_ghky3")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Panel" parent="CenterContainer/GridContainer" instance=ExtResource("2_pta7s")]
+layout_mode = 2
+transformacion = ExtResource("3_tahss")
+
+[node name="Panel2" parent="CenterContainer/GridContainer" instance=ExtResource("2_pta7s")]
+layout_mode = 2
+
+[node name="Panel3" parent="CenterContainer/GridContainer" instance=ExtResource("2_pta7s")]
+layout_mode = 2
+transformacion = ExtResource("5_4fl5n")
+
+[node name="Panel4" parent="CenterContainer/GridContainer" instance=ExtResource("2_pta7s")]
+layout_mode = 2
+transformacion = ExtResource("6_fds6h")

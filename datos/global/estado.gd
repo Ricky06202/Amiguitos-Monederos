@@ -10,3 +10,5 @@ var punto_de_control_actual: Node2D
 
 func reiniciar():
 	vidas = 3
+
+signal cambiar_transformacion(transformacion: Transformacion)

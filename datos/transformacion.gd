@@ -1,6 +1,7 @@
 extends Resource
 class_name Transformacion
 
+@export var nombre: String
 @export var animacion: SpriteFrames
 @export var hay_que_volterarla: bool
 @export var posicion_animacion: Vector2

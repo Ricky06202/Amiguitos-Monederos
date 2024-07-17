@@ -253,6 +253,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_fup52")
+nombre = "Humano"
 animacion = SubResource("SpriteFrames_b0cy4")
 hay_que_volterarla = false
 posicion_animacion = Vector2(0, 0)

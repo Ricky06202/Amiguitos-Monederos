@@ -253,6 +253,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_flc48")
+nombre = "Rana"
 animacion = SubResource("SpriteFrames_fxw0o")
 hay_que_volterarla = false
 posicion_animacion = Vector2(0, 0)

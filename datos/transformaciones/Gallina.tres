@@ -81,6 +81,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_sy5ou")
+nombre = "Gallina"
 animacion = SubResource("SpriteFrames_fhlkr")
 hay_que_volterarla = true
 posicion_animacion = Vector2(-2, 0)

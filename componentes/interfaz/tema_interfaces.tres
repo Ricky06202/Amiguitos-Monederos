@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cpv3kem5xyfnc"]
+
+[ext_resource type="FontFile" uid="uid://c6vqtqkvbap5p" path="res://recursos/Tipografias/zt-shago/ZtShago-Black.otf" id="1_bhaim"]
+
+[resource]
+default_font = ExtResource("1_bhaim")
+default_font_size = 10
