@@ -64,18 +64,10 @@ nombre = "Raton"
 animacion = SubResource("SpriteFrames_6hhvu")
 hay_que_volterarla = false
 posicion_animacion = Vector2(0, 0)
-<<<<<<< Updated upstream
 escala = 0.5
 radio = 2.0
 altura = 8.0
 posicion_colision = Vector2(0, -2)
 rotacion = 90
-=======
-escala = 1.0
-radio = 0.0
-altura = 0.0
-posicion_colision = Vector2(0, 0)
-rotacion = 0
->>>>>>> Stashed changes
 cantidad_saltos = 0
 puede_bucear = false

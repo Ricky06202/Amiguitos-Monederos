@@ -267,14 +267,9 @@ move_speed = 100.0
 jump_speed = 300.0
 
 [node name="Animacion" type="AnimatedSprite2D" parent="."]
-<<<<<<< Updated upstream
 sprite_frames = SubResource("SpriteFrames_fxw0o")
 animation = &"Caer"
 frame_progress = 0.762849
-=======
-sprite_frames = SubResource("SpriteFrames_b0cy4")
-animation = &"Quieto"
->>>>>>> Stashed changes
 offset = Vector2(0, -16)
 
 [node name="Colision" type="CollisionShape2D" parent="."]

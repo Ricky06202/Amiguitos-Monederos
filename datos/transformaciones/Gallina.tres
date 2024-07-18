@@ -84,19 +84,11 @@ script = ExtResource("1_sy5ou")
 nombre = "Gallina"
 animacion = SubResource("SpriteFrames_fhlkr")
 hay_que_volterarla = true
-<<<<<<< Updated upstream
 posicion_animacion = Vector2(-2, 0)
 escala = 1.0
 radio = 4.0
 altura = 12.0
 posicion_colision = Vector2(0, -6)
-=======
-posicion_animacion = Vector2(0, 0)
-escala = 1.0
-radio = 0.0
-altura = 0.0
-posicion_colision = Vector2(0, 0)
->>>>>>> Stashed changes
 rotacion = 0
 cantidad_saltos = 2
 puede_bucear = false
