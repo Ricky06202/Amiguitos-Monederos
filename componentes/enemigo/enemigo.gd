@@ -7,19 +7,27 @@ extends CharacterBody2D
 		inicializar()
 
 @export var move_speed: float
-var direction: float
+@export var empezar_hacia_la_derecha:= true:
+	set(e):
+		empezar_hacia_la_derecha = e
+		direction = empezar_hacia_la_derecha
+		is_facing_right = empezar_hacia_la_derecha
+
+var direction := 1
 @onready var animacion = get_node("EnemySprite")
 @onready var colision = get_node("EnemyCollision")
 var is_facing_right = true
 var gravedad = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func inicializar():
+	move_speed = enemigo.velocidad
 	if animacion:
 		animacion.sprite_frames = enemigo.animacion
-		animacion.play("Quieto")
+		animacion.play("Avanzar")
 		animacion.flip_h = enemigo.hay_que_volterarla
 		animacion.position = enemigo.posicion_animacion
 	if colision:
+		colision.shape = CapsuleShape2D.new()
 		var capsula = colision.shape as CapsuleShape2D
 		capsula.radius = enemigo.radio
 		capsula.height = enemigo.altura
@@ -59,11 +67,7 @@ func flip_enemy():
 func move_enemy():
 	if is_on_wall() or not $LeftCollision.is_colliding() or not $RightCollision.is_colliding():
 		direction = -direction
-	elif velocity.x > 0:
-		direction = 1
-	else:
-		direction = -1
-	
+		
 	velocity.x = direction * move_speed
 
 func aplicar_gravedad(delta):

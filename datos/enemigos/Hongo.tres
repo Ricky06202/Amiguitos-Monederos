@@ -1,92 +1,91 @@
-[gd_scene load_steps=28 format=3 uid="uid://87nw15kas0uj"]
+[gd_resource type="Resource" script_class="Enemigo" load_steps=26 format=3 uid="uid://bnlkerdvewmb2"]
 
-[ext_resource type="Script" path="res://componentes/enemigo/enemigo.gd" id="1_fxtdm"]
-[ext_resource type="Resource" uid="uid://bnlkerdvewmb2" path="res://datos/enemigos/Hongo.tres" id="2_hfp21"]
-[ext_resource type="Texture2D" uid="uid://ddxv0w80dwun8" path="res://recursos/Pixel Adventure/Enemies/Mushroom/Run (32x32).png" id="3_680l1"]
-[ext_resource type="Texture2D" uid="uid://b1pokad1eytp6" path="res://recursos/Pixel Adventure/Enemies/Mushroom/Hit.png" id="4_ah40p"]
+[ext_resource type="Texture2D" uid="uid://ddxv0w80dwun8" path="res://recursos/Pixel Adventure/Enemies/Mushroom/Run (32x32).png" id="1_ltrbh"]
+[ext_resource type="Script" path="res://datos/enemigo.gd" id="1_wcxu4"]
+[ext_resource type="Texture2D" uid="uid://b1pokad1eytp6" path="res://recursos/Pixel Adventure/Enemies/Mushroom/Hit.png" id="2_omdhx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xsqma"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ok5cd"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujmod"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdqvs"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gaub"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_krw4m"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1sr08"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7b64l"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04iap"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ja4dm"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eldaj"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_01rcv"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxclf"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(384, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajoc4"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(416, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0j24"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(448, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_us8xd"]
-atlas = ExtResource("3_680l1")
+atlas = ExtResource("1_ltrbh")
 region = Rect2(480, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wx4wh"]
-atlas = ExtResource("4_ah40p")
+atlas = ExtResource("2_omdhx")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4lgt"]
-atlas = ExtResource("4_ah40p")
+atlas = ExtResource("2_omdhx")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg3sx"]
-atlas = ExtResource("4_ah40p")
+atlas = ExtResource("2_omdhx")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxdd8"]
-atlas = ExtResource("4_ah40p")
+atlas = ExtResource("2_omdhx")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbphi"]
-atlas = ExtResource("4_ah40p")
+atlas = ExtResource("2_omdhx")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pluqx"]
@@ -165,38 +164,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ep05l"]
-radius = 7.0
-height = 20.0
-
-[node name="Enemigo" type="CharacterBody2D"]
-collision_layer = 8
-collision_mask = 10
-velocity = Vector2(0, 23961.2)
-script = ExtResource("1_fxtdm")
-enemigo = ExtResource("2_hfp21")
-move_speed = 30.0
-empezar_hacia_la_derecha = null
-
-[node name="EnemySprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
-sprite_frames = SubResource("SpriteFrames_pluqx")
-animation = &"Avanzar"
-frame_progress = 0.979277
-offset = Vector2(0, -15)
-flip_h = true
-
-[node name="EnemyCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ep05l")
-
-[node name="RightCollision" type="RayCast2D" parent="."]
-position = Vector2(17, 0)
-target_position = Vector2(0, 12)
-collision_mask = 2
-
-[node name="LeftCollision" type="RayCast2D" parent="."]
-position = Vector2(-17, 0)
-target_position = Vector2(0, 12)
-collision_mask = 2
+[resource]
+script = ExtResource("1_wcxu4")
+animacion = SubResource("SpriteFrames_pluqx")
+hay_que_volterarla = true
+velocidad = 30
+posicion_animacion = Vector2(0, -1)
+radio = 7.0
+altura = 20.0
+posicion_colision = Vector2(0, -7)
+rotacion = 90
