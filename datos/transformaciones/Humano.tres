@@ -263,4 +263,4 @@ altura = 20.0
 posicion_colision = Vector2(0, -10)
 rotacion = 0
 cantidad_saltos = 1
-puede_bucear = false
+puede_saltar_en_las_paredes = false

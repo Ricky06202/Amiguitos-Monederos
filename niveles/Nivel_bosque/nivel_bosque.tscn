@@ -18,7 +18,7 @@ color_tierra = Color(0.254902, 0.368627, 0.34902, 1)
 imagen_fondo = ExtResource("3_6l3hl")
 
 [node name="Player" parent="." instance=ExtResource("4_uqbwd")]
-position = Vector2(86, 138.999)
+position = Vector2(86, 139)
 velocity = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

@@ -1,10 +1,12 @@
 @tool
 extends CharacterBody2D
 
-@export var transformacion_actual: Transformacion:
+@export var transformacion_actual: Transformacion = preload("res://datos/transformaciones/Humano.tres"):
 	set(t):
 		transformacion_actual = t
 		inicializar()
+
+var saltos_realizados := 0
 
 @export var move_speed: float
 @export var jump_speed: float
@@ -29,6 +31,7 @@ func inicializar():
 
 
 func _ready():
+	if Engine.is_editor_hint(): return
 	inicializar()
 	Estado.cambiar_transformacion.connect(al_cambiar_transformacion)
 
@@ -52,6 +55,10 @@ func _physics_process(delta):
 
 func update_animations():
 	if not is_on_floor():
+		if transformacion_actual.puede_saltar_en_las_paredes and is_on_wall_only():
+			if animacion.sprite_frames.has_animation("Saltar"):
+				animacion.play("Saltar")
+
 		if velocity.y < 0:
 			if animacion.sprite_frames.has_animation("Saltar"):
 				animacion.play("Saltar")
@@ -75,10 +82,15 @@ func move_x():
 	var input_axis = Input.get_axis("Izquierda", "Derecha")
 	velocity.x = input_axis * move_speed
 
+#todo hacer componentes en forma de nodos para las habilidades, para asi hacerlo escalable
 func jump():
-	if Input.is_action_just_pressed("Saltar") and is_on_floor():
+	if is_on_floor() or transformacion_actual.puede_saltar_en_las_paredes and is_on_wall_only():
+		saltos_realizados = 0
+	if transformacion_actual.cantidad_saltos == 0 or not (saltos_realizados < transformacion_actual.cantidad_saltos) : return
+	if Input.is_action_just_pressed("Saltar") and is_on_floor() or Input.is_action_just_pressed("Saltar") and not is_on_floor():
 		velocity.y = -jump_speed
+		saltos_realizados += 1
 	
 func aplicar_gravedad(delta):
-	if not is_on_floor():
+	if not is_on_floor() or transformacion_actual.puede_saltar_en_las_paredes:
 		velocity.y += gravedad * delta

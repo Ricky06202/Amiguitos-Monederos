@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Transformacion" load_steps=13 format=3 uid="uid://ckqxhn34mv0y6"]
+[gd_resource type="Resource" script_class="Transformacion" load_steps=18 format=3 uid="uid://ckqxhn34mv0y6"]
 
 [ext_resource type="Script" path="res://datos/transformacion.gd" id="1_sy5ou"]
 [ext_resource type="Texture2D" uid="uid://dvirec8v7rg60" path="res://recursos/Rocky Roads/Enemies/chicken.png" id="1_vto0b"]
@@ -31,6 +31,14 @@ region = Rect2(160, 32, 32, 32)
 atlas = ExtResource("1_vto0b")
 region = Rect2(192, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2klca"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lg02"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(96, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggjix"]
 atlas = ExtResource("1_vto0b")
 region = Rect2(0, 0, 32, 32)
@@ -38,6 +46,18 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4xwi"]
 atlas = ExtResource("1_vto0b")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpf0t"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s736h"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct5wx"]
+atlas = ExtResource("1_vto0b")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhlkr"]
 animations = [{
@@ -69,6 +89,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2klca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lg02")
+}],
+"loop": true,
+"name": &"Caer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ggjix")
 }, {
 "duration": 1.0,
@@ -77,6 +108,20 @@ animations = [{
 "loop": true,
 "name": &"Quieto",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpf0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s736h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct5wx")
+}],
+"loop": true,
+"name": &"Saltar",
+"speed": 5.0
 }]
 
 [resource]
@@ -85,10 +130,10 @@ nombre = "Gallina"
 animacion = SubResource("SpriteFrames_fhlkr")
 hay_que_volterarla = true
 posicion_animacion = Vector2(-2, 0)
-escala = 1.0
-radio = 4.0
-altura = 12.0
-posicion_colision = Vector2(0, -6)
+escala = 1.5
+radio = 5.0
+altura = 20.0
+posicion_colision = Vector2(0, -10)
 rotacion = 0
 cantidad_saltos = 2
-puede_bucear = false
+puede_saltar_en_las_paredes = false

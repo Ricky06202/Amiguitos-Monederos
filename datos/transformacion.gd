@@ -15,4 +15,4 @@ class_name Transformacion
 
 @export_category("Habilidades")
 @export var cantidad_saltos: int
-@export var puede_bucear: bool
+@export var puede_saltar_en_las_paredes: bool = false
