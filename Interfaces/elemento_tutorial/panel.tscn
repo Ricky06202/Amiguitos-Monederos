@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcoyuls3e70hj"]
+
+[ext_resource type="Texture2D" uid="uid://ct5ia6elw4srb" path="res://recursos/Basic GUI/BoxesBanners/Box_Blue_Square.png" id="1_ivpk2"]
+
+[node name="Panel" type="TextureRect"]
+offset_left = 40.0
+offset_top = 9.0
+offset_right = 216.0
+offset_bottom = 126.0
+texture = ExtResource("1_ivpk2")
+expand_mode = 1
