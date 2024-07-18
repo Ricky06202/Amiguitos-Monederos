@@ -72,7 +72,6 @@ texture_filter = 1
 scale = Vector2(1.40625, 1.40625)
 sprite_frames = SubResource("SpriteFrames_6hhvu")
 animation = &"Quieto"
-frame_progress = 0.238816
 centered = false
 
 [node name="nombre" type="Label" parent="."]

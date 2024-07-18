@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm162s67rl4et"]
+[gd_scene load_steps=10 format=3 uid="uid://cm162s67rl4et"]
 
 [ext_resource type="PackedScene" uid="uid://dxkm1dgigyi5v" path="res://componentes/fondo/fondo.tscn" id="2_n8f76"]
 [ext_resource type="Texture2D" uid="uid://b7cvy7hietsgu" path="res://recursos/Rocky Roads/Backgrounds/trees.png" id="3_6l3hl"]
 [ext_resource type="PackedScene" uid="uid://cjki6oa0kc000" path="res://componentes/terreno/terreno.tscn" id="3_7badw"]
 [ext_resource type="PackedScene" uid="uid://coed18knxvhp3" path="res://componentes/jugador/jugador.tscn" id="4_uqbwd"]
+[ext_resource type="PackedScene" uid="uid://87nw15kas0uj" path="res://componentes/enemigo/enemigo.tscn" id="5_yhmrt"]
+[ext_resource type="Resource" uid="uid://ctrtg4rvoronw" path="res://datos/enemigos/Tronco.tres" id="6_a6fuh"]
+[ext_resource type="Resource" uid="uid://d3vyox65o1sig" path="res://datos/enemigos/Fantasma.tres" id="6_td8iq"]
+[ext_resource type="Resource" uid="uid://c7bxvnpmo3a58" path="res://datos/enemigos/Gallina.tres" id="7_fw6wc"]
+[ext_resource type="Resource" uid="uid://b52p414l8jmpg" path="res://datos/enemigos/Slime.tres" id="9_fgxa0"]
 
 [node name="Bosque" type="Node2D"]
 texture_filter = 1
@@ -18,7 +23,7 @@ color_tierra = Color(0.254902, 0.368627, 0.34902, 1)
 imagen_fondo = ExtResource("3_6l3hl")
 
 [node name="Player" parent="." instance=ExtResource("4_uqbwd")]
-position = Vector2(86, 138.999)
+position = Vector2(77.7534, 139)
 velocity = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -31,3 +36,43 @@ drag_top_margin = 0.3
 drag_bottom_margin = 0.3
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="Enemy1" parent="." instance=ExtResource("5_yhmrt")]
+position = Vector2(1207.76, 154.999)
+velocity = Vector2(0, 0)
+enemigo = ExtResource("6_a6fuh")
+move_speed = 50.0
+empezar_hacia_la_derecha = true
+
+[node name="Enemy2" parent="." instance=ExtResource("5_yhmrt")]
+position = Vector2(599.804, 90.9917)
+velocity = Vector2(0, 0)
+enemigo = ExtResource("6_td8iq")
+move_speed = 40.0
+empezar_hacia_la_derecha = true
+
+[node name="Enemy6" parent="." instance=ExtResource("5_yhmrt")]
+position = Vector2(643, 90.9983)
+velocity = Vector2(0, 0)
+enemigo = ExtResource("6_td8iq")
+move_speed = 40.0
+empezar_hacia_la_derecha = true
+
+[node name="Enemy3" parent="." instance=ExtResource("5_yhmrt")]
+position = Vector2(1576.99, 218.996)
+velocity = Vector2(0, 0)
+enemigo = ExtResource("7_fw6wc")
+move_speed = 75.0
+empezar_hacia_la_derecha = true
+
+[node name="Enemy4" parent="." instance=ExtResource("5_yhmrt")]
+position = Vector2(950, 170.977)
+velocity = Vector2(0, 0)
+enemigo = ExtResource("9_fgxa0")
+move_speed = 20.0
+empezar_hacia_la_derecha = true
+
+[node name="Enemy5" parent="." instance=ExtResource("5_yhmrt")]
+position = Vector2(20.2746, 90.9984)
+velocity = Vector2(0, 0)
+empezar_hacia_la_derecha = true

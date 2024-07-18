@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Transformacion" load_steps=38 format=3 uid="uid://b77c2wfm4afqx"]
+[gd_resource type="Resource" script_class="Transformacion" load_steps=50 format=3 uid="uid://b77c2wfm4afqx"]
 
 [ext_resource type="Script" path="res://datos/transformacion.gd" id="1_flc48"]
 [ext_resource type="Texture2D" uid="uid://cjex22144jr2h" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Run (32x32).png" id="1_wi6fk"]
 [ext_resource type="Texture2D" uid="uid://dixeegwg7rl03" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Fall (32x32).png" id="2_duv7g"]
+[ext_resource type="Texture2D" uid="uid://c6vd2el57axso" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Wall Jump (32x32).png" id="3_cud2h"]
 [ext_resource type="Texture2D" uid="uid://eeykeae551fo" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Idle (32x32).png" id="3_o7lqp"]
-[ext_resource type="Texture2D" uid="uid://dqswdvryoyxy6" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Jump (32x32).png" id="4_5vj2b"]
+[ext_resource type="Texture2D" uid="uid://cwh38xg0djayv" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Double Jump (32x32).png" id="5_eqmh3"]
 [ext_resource type="Texture2D" uid="uid://dvn45dbm1ff77" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Hit (32x32).png" id="5_nvuri"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_01ma4"]
@@ -55,6 +56,26 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("1_wi6fk")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxpqr"]
+atlas = ExtResource("3_cud2h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2fyh"]
+atlas = ExtResource("3_cud2h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wy0j"]
+atlas = ExtResource("3_cud2h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41sa4"]
+atlas = ExtResource("3_cud2h")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wmfq"]
+atlas = ExtResource("3_cud2h")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tsvhh"]
 atlas = ExtResource("3_o7lqp")
 region = Rect2(0, 0, 32, 32)
@@ -98,6 +119,30 @@ region = Rect2(288, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_15ydv"]
 atlas = ExtResource("3_o7lqp")
 region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c6bj"]
+atlas = ExtResource("5_eqmh3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc18n"]
+atlas = ExtResource("5_eqmh3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7q88"]
+atlas = ExtResource("5_eqmh3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkxyf"]
+atlas = ExtResource("5_eqmh3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc6xi"]
+atlas = ExtResource("5_eqmh3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yivt7"]
+atlas = ExtResource("5_eqmh3")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgi5p"]
 atlas = ExtResource("5_nvuri")
@@ -180,6 +225,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_lxpqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2fyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wy0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41sa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wmfq")
+}],
+"loop": true,
+"name": &"Parkour",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tsvhh")
 }, {
 "duration": 1.0,
@@ -218,11 +283,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_5vj2b")
+"texture": SubResource("AtlasTexture_4c6bj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc18n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7q88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkxyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc6xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yivt7")
 }],
 "loop": true,
 "name": &"Saltar",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -262,5 +342,5 @@ radio = 6.0
 altura = 20.0
 posicion_colision = Vector2(0, -10)
 rotacion = 0
-cantidad_saltos = 0
-puede_bucear = false
+cantidad_saltos = 1
+puede_saltar_en_las_paredes = true

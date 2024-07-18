@@ -3,6 +3,7 @@ class_name Enemigo
 
 @export var animacion: SpriteFrames
 @export var hay_que_volterarla: bool
+@export var velocidad: int
 @export var posicion_animacion: Vector2
 
 @export_category("Colision")
