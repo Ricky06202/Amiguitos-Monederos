@@ -13,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="fondo_tutorial" parent="." instance=ExtResource("1_1t8fl")]
+layout_mode = 1
 
 [node name="Salto" type="Sprite2D" parent="."]
 position = Vector2(133, 30)
