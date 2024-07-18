@@ -2,6 +2,9 @@ extends Control
 
 @export var menu_principal: PackedScene = load("res://componentes/interfaz/menu principal/menu_principal.tscn")
 
+func _ready():
+	Estado.pausar.connect(pausar_despausar)
+
 func pausar_despausar():
 	get_tree().paused = !get_tree().paused
 	visible = !visible

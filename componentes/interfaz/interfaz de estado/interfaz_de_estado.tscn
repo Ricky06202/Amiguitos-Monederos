@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsh8cbkftyunb"]
+
+[ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_s5hlo"]
+[ext_resource type="Script" path="res://componentes/interfaz/interfaz de estado/interfaz_de_estado.gd" id="2_dalsv"]
+[ext_resource type="PackedScene" uid="uid://bim32wxxe1lal" path="res://componentes/panel informativo/panel_informativo.tscn" id="2_fay7y"]
+[ext_resource type="Texture2D" uid="uid://cobcwp3peduse" path="res://recursos/Pixel Adventure/Enemies/Slime/Idle-Run (44x30).png" id="3_77kgi"]
+[ext_resource type="Texture2D" uid="uid://vx4c8ewmykyc" path="res://recursos/Basic GUI/Icons/Icon_Large_Menu_Blank.png" id="5_hmg7u"]
+
+[node name="Interfaz de Estado" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s5hlo")
+script = ExtResource("2_dalsv")
+
+[node name="Panel Monedas" parent="." instance=ExtResource("2_fay7y")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 14.0
+
+[node name="Panel Enemigos" parent="." instance=ExtResource("2_fay7y")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 16.0
+offset_right = 62.0
+offset_bottom = 28.0
+imagen = ExtResource("3_77kgi")
+hframes = 10
+
+[node name="Sprite" parent="Panel Enemigos" index="1"]
+scale = Vector2(0.339583, 0.339583)
+texture = ExtResource("3_77kgi")
+hframes = 10
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -25.0
+offset_top = 6.0
+offset_right = -7.0
+offset_bottom = 23.0
+grow_horizontal = 0
+icon = ExtResource("5_hmg7u")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+
+[editable path="Panel Enemigos"]

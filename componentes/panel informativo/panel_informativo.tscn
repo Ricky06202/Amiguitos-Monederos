@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bim32wxxe1lal"]
+
+[ext_resource type="Script" path="res://componentes/panel informativo/panel_informativo.gd" id="1_c0f7g"]
+[ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_h68n4"]
+[ext_resource type="Texture2D" uid="uid://b5ssf25rqdqjx" path="res://recursos/Rocky Roads/Objects/coin_gold.png" id="1_lmmlx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pea35"]
+font_size = 8
+
+[node name="Panel Informativo" type="Panel"]
+offset_right = 77.0
+offset_bottom = 12.0
+theme = ExtResource("1_h68n4")
+script = ExtResource("1_c0f7g")
+texto = "10/10"
+imagen = ExtResource("1_lmmlx")
+hframes = 8
+frame = 7
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_right = 74.0
+offset_bottom = 12.0
+text = "10/10"
+label_settings = SubResource("LabelSettings_pea35")
+vertical_alignment = 1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(10, 6)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_lmmlx")
+hframes = 8
+frame = 7

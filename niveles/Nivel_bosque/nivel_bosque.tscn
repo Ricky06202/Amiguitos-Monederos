@@ -23,7 +23,7 @@ color_tierra = Color(0.254902, 0.368627, 0.34902, 1)
 imagen_fondo = ExtResource("3_6l3hl")
 
 [node name="Player" parent="." instance=ExtResource("4_uqbwd")]
-position = Vector2(77.7534, 139)
+position = Vector2(104, 138.998)
 velocity = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -38,41 +38,35 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="Enemy1" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(1207.76, 154.999)
+position = Vector2(1207.76, 155)
 velocity = Vector2(0, 0)
 enemigo = ExtResource("6_a6fuh")
 move_speed = 50.0
-empezar_hacia_la_derecha = true
 
 [node name="Enemy2" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(599.804, 90.9917)
+position = Vector2(599.804, 90.9989)
 velocity = Vector2(0, 0)
 enemigo = ExtResource("6_td8iq")
 move_speed = 40.0
-empezar_hacia_la_derecha = true
 
 [node name="Enemy6" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(643, 90.9983)
+position = Vector2(643, 90.9997)
 velocity = Vector2(0, 0)
 enemigo = ExtResource("6_td8iq")
 move_speed = 40.0
-empezar_hacia_la_derecha = true
 
 [node name="Enemy3" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(1576.99, 218.996)
+position = Vector2(1576.99, 218.999)
 velocity = Vector2(0, 0)
 enemigo = ExtResource("7_fw6wc")
 move_speed = 75.0
-empezar_hacia_la_derecha = true
 
 [node name="Enemy4" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(950, 170.977)
+position = Vector2(950, 170.999)
 velocity = Vector2(0, 0)
 enemigo = ExtResource("9_fgxa0")
 move_speed = 20.0
-empezar_hacia_la_derecha = true
 
 [node name="Enemy5" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(20.2746, 90.9984)
+position = Vector2(20.2746, 90.9988)
 velocity = Vector2(0, 0)
-empezar_hacia_la_derecha = true

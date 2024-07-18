@@ -13,6 +13,9 @@ extends CharacterBody2D
 		direction = empezar_hacia_la_derecha
 		is_facing_right = empezar_hacia_la_derecha
 
+@onready var hitbox : Hitbox= get_node("Hitbox")
+@onready var hurtbox : Hurtbox= get_node("Hurtbox")
+
 var direction := 1
 @onready var animacion = get_node("EnemySprite")
 @onready var colision = get_node("EnemyCollision")
@@ -38,11 +41,15 @@ func _ready():
 	inicializar()
 
 func _physics_process(delta):
-	update_animations_enemy()
-	flip_enemy()
+	if not hemos_muerto:
+		update_animations_enemy()
+		flip_enemy()
 	#cuando estamos ejecutando el juego
 	if not Engine.is_editor_hint():
-		move_enemy()	
+		if not hemos_muerto:
+			move_enemy()	
+		else:
+			velocity.x = 0
 		aplicar_gravedad(delta)
 		move_and_slide() 
 
@@ -67,9 +74,24 @@ func flip_enemy():
 func move_enemy():
 	if is_on_wall() or not $LeftCollision.is_colliding() or not $RightCollision.is_colliding():
 		direction = -direction
-		
+
 	velocity.x = direction * move_speed
 
 func aplicar_gravedad(delta):
 	if not is_on_floor():
 		velocity.y += gravedad * delta
+
+var hemos_muerto := false
+func _on_vida_sin_vida():
+	hemos_muerto = true
+	hitbox.queue_free()
+	hurtbox.queue_free()
+	animacion.play("Sufrir")
+	var tween := get_tree().create_tween()
+	tween.tween_property(animacion, "modulate", Color.TRANSPARENT, 1)
+	await tween.finished
+	morir()
+
+func morir():
+	Estado.enemigo_derrotado.emit()
+	queue_free()

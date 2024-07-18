@@ -1,9 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://87nw15kas0uj"]
+[gd_scene load_steps=33 format=3 uid="uid://87nw15kas0uj"]
 
 [ext_resource type="Script" path="res://componentes/enemigo/enemigo.gd" id="1_fxtdm"]
 [ext_resource type="Resource" uid="uid://bnlkerdvewmb2" path="res://datos/enemigos/Hongo.tres" id="2_hfp21"]
 [ext_resource type="Texture2D" uid="uid://ddxv0w80dwun8" path="res://recursos/Pixel Adventure/Enemies/Mushroom/Run (32x32).png" id="3_680l1"]
 [ext_resource type="Texture2D" uid="uid://b1pokad1eytp6" path="res://recursos/Pixel Adventure/Enemies/Mushroom/Hit.png" id="4_ah40p"]
+[ext_resource type="Script" path="res://componentes/vida.gd" id="5_uadl4"]
+[ext_resource type="Script" path="res://componentes/hitbox.gd" id="6_xa8b1"]
+[ext_resource type="Script" path="res://componentes/hurtbox.gd" id="7_4uhu6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xsqma"]
 atlas = ExtResource("3_680l1")
@@ -142,7 +145,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Avanzar",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -165,31 +168,35 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ep05l"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hom0j"]
 radius = 7.0
 height = 20.0
 
-[node name="Enemigo" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr3g0"]
+size = Vector2(20, 14.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7kv"]
+size = Vector2(16, 5)
+
+[node name="Enemigo" type="CharacterBody2D" groups=["Enemigos"]]
 collision_layer = 8
 collision_mask = 10
 velocity = Vector2(0, 23961.2)
 script = ExtResource("1_fxtdm")
 enemigo = ExtResource("2_hfp21")
 move_speed = 30.0
-empezar_hacia_la_derecha = null
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_pluqx")
 animation = &"Avanzar"
-frame_progress = 0.979277
 offset = Vector2(0, -15)
 flip_h = true
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ep05l")
+shape = SubResource("CapsuleShape2D_hom0j")
 
 [node name="RightCollision" type="RayCast2D" parent="."]
 position = Vector2(17, 0)
@@ -200,3 +207,28 @@ collision_mask = 2
 position = Vector2(-17, 0)
 target_position = Vector2(0, 12)
 collision_mask = 2
+
+[node name="Vida" type="Node" parent="."]
+script = ExtResource("5_uadl4")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("6_xa8b1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_pr3g0")
+debug_color = Color(0.797504, 0.421349, 0.088228, 0.42)
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("vida")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("7_4uhu6")
+vida = NodePath("../Vida")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_ix7kv")
+debug_color = Color(0.99878, 0, 0.132809, 0.42)
+
+[connection signal="sin_vida" from="Vida" to="." method="_on_vida_sin_vida"]
