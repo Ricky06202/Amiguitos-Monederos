@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://doe0jlt7wmayg"]
+
+[ext_resource type="PackedScene" uid="uid://c4d44df0odc12" path="res://Interfaces/elemento_tutorial/fondo_tutorial.tscn" id="1_1t8fl"]
+[ext_resource type="Texture2D" uid="uid://sfb0gmd8hhbv" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Jump (32x32).png" id="2_o5wch"]
+[ext_resource type="Texture2D" uid="uid://c4epsiusv67av" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Dummy/Square-Icon-Magenta/Click@2x.png" id="3_c6lm8"]
+
+[node name="tutorial_saltar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fondo_tutorial" parent="." instance=ExtResource("1_1t8fl")]
+
+[node name="Salto" type="Sprite2D" parent="."]
+position = Vector2(133, 30)
+texture = ExtResource("2_o5wch")
+
+[node name="Boton_salto(space)" type="Sprite2D" parent="."]
+position = Vector2(148.737, 107.141)
+scale = Vector2(0.399126, 0.195825)
+texture = ExtResource("3_c6lm8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Boton_salto(space)"]
+offset_left = -48.0753
+offset_top = -30.4626
+offset_right = 68.9247
+offset_bottom = 58.5374
+bbcode_enabled = true
+text = "[font_size=35]Space"
+
+[node name="Boton_salto(w)" type="Sprite2D" parent="."]
+position = Vector2(97.875, 107)
+scale = Vector2(0.192708, 0.193548)
+texture = ExtResource("3_c6lm8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Boton_salto(w)"]
+offset_left = -25.7911
+offset_top = -38.75
+offset_right = 64.2089
+offset_bottom = 50.25
+bbcode_enabled = true
+text = "[font_size=50]W"

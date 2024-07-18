@@ -72,5 +72,10 @@ script = ExtResource("1_lcqro")
 animacion = SubResource("SpriteFrames_x1nc6")
 escala = 1.0
 posicionY = 0
+<<<<<<< Updated upstream
 esDinero = true
 valor = 3
+=======
+esDinero = false
+valor = 0
+>>>>>>> Stashed changes

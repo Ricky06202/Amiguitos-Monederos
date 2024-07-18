@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://c14l55yb6auoc"]
+
+[ext_resource type="Texture2D" uid="uid://bhlk3devvor1o" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Magenta/SolidArrow-Right-Idle@2x.png" id="1_mwo14"]
+[ext_resource type="Texture2D" uid="uid://bibj6hvlk781r" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Magenta/SolidArrow-Right-Click@2x.png" id="2_qqlui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugkqw"]
+atlas = ExtResource("1_mwo14")
+region = Rect2(0, 0, 144, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deumx"]
+atlas = ExtResource("2_qqlui")
+region = Rect2(0, 0, 144, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oelds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugkqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deumx")
+}],
+"loop": true,
+"name": &"T_mover",
+"speed": 5.0
+}]
+
+[node name="Tutorial_boton" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_oelds")
+animation = &"T_mover"

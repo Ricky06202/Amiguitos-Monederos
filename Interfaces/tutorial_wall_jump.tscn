@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvnrth0yp1ibi"]
+
+[ext_resource type="Texture2D" uid="uid://2m823wkgjsdx" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Wall Jump (32x32).png" id="1_x26up"]
+[ext_resource type="PackedScene" uid="uid://6grig6s6p0lo" path="res://Interfaces/elemento_tutorial/fondo_tutorial_2.tscn" id="2_ofogc"]
+[ext_resource type="Texture2D" uid="uid://sfb0gmd8hhbv" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Jump (32x32).png" id="3_hfk21"]
+
+[node name="tutorial_wallJump" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fondo_tutorial2" parent="." instance=ExtResource("2_ofogc")]
+
+[node name="salto_muro2" type="Sprite2D" parent="."]
+position = Vector2(130, 42)
+scale = Vector2(0.610352, 0.610352)
+texture = ExtResource("1_x26up")
+flip_h = true
+hframes = 5
+
+[node name="salto_muro" type="Sprite2D" parent="."]
+position = Vector2(152.125, 75.375)
+scale = Vector2(0.632813, 0.648438)
+texture = ExtResource("1_x26up")
+hframes = 5
+
+[node name="salto" type="Sprite2D" parent="."]
+position = Vector2(141, 57)
+scale = Vector2(0.59375, 0.589844)
+texture = ExtResource("3_hfk21")
+flip_h = true

@@ -30,10 +30,6 @@ func inicializar():
 
 func _ready():
 	inicializar()
-	Estado.cambiar_transformacion.connect(al_cambiar_transformacion)
-
-func al_cambiar_transformacion(transformacion: Transformacion):
-	transformacion_actual = transformacion
 
 func _physics_process(delta):
 	update_animations()

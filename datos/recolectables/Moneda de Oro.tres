@@ -72,5 +72,10 @@ script = ExtResource("2_815xg")
 animacion = SubResource("SpriteFrames_fhaky")
 escala = 1.0
 posicionY = 0
+<<<<<<< Updated upstream
 esDinero = true
 valor = 7
+=======
+esDinero = false
+valor = 0
+>>>>>>> Stashed changes

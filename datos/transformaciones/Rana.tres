@@ -258,9 +258,15 @@ animacion = SubResource("SpriteFrames_fxw0o")
 hay_que_volterarla = false
 posicion_animacion = Vector2(0, 0)
 escala = 1.0
+<<<<<<< Updated upstream
 radio = 6.0
 altura = 20.0
 posicion_colision = Vector2(0, -10)
+=======
+radio = 0.0
+altura = 0.0
+posicion_colision = Vector2(0, 0)
+>>>>>>> Stashed changes
 rotacion = 0
 cantidad_saltos = 0
 puede_bucear = false

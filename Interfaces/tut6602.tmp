@@ -1,0 +1,118 @@
+[gd_scene load_steps=17 format=3 uid="uid://cgav522j7mpxm"]
+
+[ext_resource type="PackedScene" uid="uid://c4d44df0odc12" path="res://Interfaces/elemento_tutorial/fondo_tutorial.tscn" id="1_my1nr"]
+[ext_resource type="Script" path="res://Interfaces/moverse_tutorial.gd" id="3_hqwr7"]
+[ext_resource type="Texture2D" uid="uid://cop1vjvxykrlo" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Run (32x32).png" id="6_qi0ax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4torf"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh3lv"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtftl"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbdi5"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46qvc"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urjwa"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrvdd"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f5hm"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05qva"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3og2"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqj0w"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u0t7"]
+atlas = ExtResource("6_qi0ax")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srg0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4torf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh3lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtftl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbdi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46qvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urjwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrvdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f5hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05qva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3og2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqj0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u0t7")
+}],
+"loop": true,
+"name": &"mover",
+"speed": 5.0
+}]
+
+[node name="tutorial_mover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 8.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="fondo_tutorial" parent="." instance=ExtResource("1_my1nr")]
+
+[node name="moverse" type="AnimatedSprite2D" parent="."]
+position = Vector2(118, 46)
+sprite_frames = SubResource("SpriteFrames_srg0t")
+animation = &"mover"
+script = ExtResource("3_hqwr7")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://6grig6s6p0lo"]
+
+[ext_resource type="Texture2D" uid="uid://ct5ia6elw4srb" path="res://recursos/Basic GUI/BoxesBanners/Box_Blue_Square.png" id="1_8pgh6"]
+[ext_resource type="PackedScene" uid="uid://cjki6oa0kc000" path="res://componentes/terreno/terreno.tscn" id="2_2jy7p"]
+
+[node name="fondo_tutorial2" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Ventana" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(127.5, 67.5)
+scale = Vector2(0.117454, 0.0781866)
+texture = ExtResource("1_8pgh6")
+
+[node name="Terreno" parent="." instance=ExtResource("2_2jy7p")]
+position = Vector2(-3, 33)
+layer_0/tile_data = PackedInt32Array(262149, 458752, 3, 262150, 524288, 3, 262151, 524288, 3, 262152, 524288, 3, 262153, 524288, 3, 262154, 589824, 3, 65546, 589824, 3, 131082, 589824, 3, 196618, 589824, 3, -65529, 458752, 3, 7, 458752, 3, 65543, 458752, 3, 10, 589824, 3, -65526, 589824, 3)
