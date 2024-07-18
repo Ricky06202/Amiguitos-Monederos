@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbgr2wd0yf3r6"]
+
+[ext_resource type="PackedScene" uid="uid://na3apqnwsjx6" path="res://Interfaces/elemento_tutorial/fondo_tutorial_4.tscn" id="1_c7o8h"]
+[ext_resource type="Texture2D" uid="uid://bc3ur42iinwtu" path="res://recursos/Rocky Roads/Enemies/bear_polar.png" id="2_kfati"]
+[ext_resource type="Script" path="res://Interfaces/animacionMoverBajo.gd" id="3_futnr"]
+
+[sub_resource type="Animation" id="Animation_1c1rn"]
+resource_name = "moverseBajoTutorial"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bear_polar:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 2.2, 2.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 4, 5, 6, 7, 4, 5, 6, 7, 4, 5, 6, 7, 4, 5, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bear_polar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(78, 79), Vector2(176, 80), Vector2(176, 80), Vector2(176, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_4hvvg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bear_polar:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxoei"]
+_data = {
+"RESET": SubResource("Animation_4hvvg"),
+"moverseBajoTutorial": SubResource("Animation_1c1rn")
+}
+
+[node name="tutorial_lugarBajo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fondo_tutorial_4" parent="." instance=ExtResource("1_c7o8h")]
+layout_mode = 1
+
+[node name="Bear_polar" type="Sprite2D" parent="."]
+position = Vector2(169.467, 79.9333)
+texture = ExtResource("2_kfati")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="moverseBajo" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xxoei")
+}
+script = ExtResource("3_futnr")

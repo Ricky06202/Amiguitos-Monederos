@@ -1,0 +1,309 @@
+[gd_scene load_steps=11 format=3 uid="uid://doe0jlt7wmayg"]
+
+[ext_resource type="PackedScene" uid="uid://c4d44df0odc12" path="res://Interfaces/elemento_tutorial/fondo_tutorial.tscn" id="1_1t8fl"]
+[ext_resource type="Texture2D" uid="uid://sfb0gmd8hhbv" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Jump (32x32).png" id="2_o5wch"]
+[ext_resource type="Script" path="res://Interfaces/animacionSaltar.gd" id="2_yc8ku"]
+[ext_resource type="Texture2D" uid="uid://c4epsiusv67av" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Dummy/Square-Icon-Magenta/Click@2x.png" id="3_c6lm8"]
+[ext_resource type="Texture2D" uid="uid://ciu7uo63lrtju" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Fall (32x32).png" id="3_d08ja"]
+[ext_resource type="Texture2D" uid="uid://ckxdihixv05kt" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Idle (32x32).png" id="3_t128b"]
+[ext_resource type="Texture2D" uid="uid://dvi1lt2eng4p8" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Dummy/Square-Icon-Blue/Idle@2x.png" id="4_ftjiu"]
+
+[sub_resource type="Animation" id="Animation_0vonv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quieto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Salto_subida:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Salto_bajada:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qcwn0"]
+resource_name = "saltoTutorial"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quieto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quieto:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Salto_subida:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Salto_subida:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(131, 46), Vector2(131, 27)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Salto_subida:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Salto_bajada:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Salto_bajada:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Salto_bajada:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(131, 27), Vector2(131, 47)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Boton(w):visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.7, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false, true, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Boton(space):visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.7, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false, true, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Boton(w)_click:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.7, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Boton(space)_click:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.7, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqfv1"]
+_data = {
+"RESET": SubResource("Animation_0vonv"),
+"saltoTutorial": SubResource("Animation_qcwn0")
+}
+
+[node name="tutorial_saltar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fondo_tutorial" parent="." instance=ExtResource("1_1t8fl")]
+layout_mode = 1
+
+[node name="Saltar" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pqfv1")
+}
+script = ExtResource("2_yc8ku")
+
+[node name="Salto_subida" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(131, 44.4167)
+texture = ExtResource("2_o5wch")
+
+[node name="Salto_bajada" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(131, 37)
+texture = ExtResource("3_d08ja")
+
+[node name="Quieto" type="Sprite2D" parent="."]
+position = Vector2(131, 48)
+texture = ExtResource("3_t128b")
+hframes = 11
+
+[node name="Boton(w)_click" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 76.0
+offset_top = 93.0
+offset_right = 114.0
+offset_bottom = 119.0
+texture = ExtResource("3_c6lm8")
+expand_mode = 1
+
+[node name="W" type="RichTextLabel" parent="Boton(w)_click"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 1.0
+offset_right = 64.0
+offset_bottom = 53.0
+bbcode_enabled = true
+text = "[font_size=15]W"
+
+[node name="Boton(space)_click" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 120.0
+offset_top = 94.0
+offset_right = 177.0
+offset_bottom = 119.0
+texture = ExtResource("3_c6lm8")
+expand_mode = 1
+
+[node name="Space" type="RichTextLabel" parent="Boton(space)_click"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -1.0
+offset_right = 124.0
+offset_bottom = 88.0
+bbcode_enabled = true
+text = "[font_size=1w5]Space"
+
+[node name="Boton(w)" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 93.0
+offset_right = 114.0
+offset_bottom = 119.0
+texture = ExtResource("4_ftjiu")
+expand_mode = 1
+
+[node name="W" type="RichTextLabel" parent="Boton(w)"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 1.0
+offset_right = 64.0
+offset_bottom = 53.0
+bbcode_enabled = true
+text = "[font_size=15]W"
+
+[node name="Boton(space)" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 94.0
+offset_right = 177.0
+offset_bottom = 119.0
+texture = ExtResource("4_ftjiu")
+expand_mode = 1
+
+[node name="Space" type="RichTextLabel" parent="Boton(space)"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -1.0
+offset_right = 124.0
+offset_bottom = 88.0
+bbcode_enabled = true
+text = "[font_size=1w5]Space"

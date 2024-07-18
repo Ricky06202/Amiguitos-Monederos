@@ -1,0 +1,196 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgav522j7mpxm"]
+
+[ext_resource type="PackedScene" uid="uid://c4d44df0odc12" path="res://Interfaces/elemento_tutorial/fondo_tutorial.tscn" id="1_my1nr"]
+[ext_resource type="Script" path="res://Interfaces/animacionMover.gd" id="3_s71ir"]
+[ext_resource type="Texture2D" uid="uid://cop1vjvxykrlo" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Run (32x32).png" id="6_qi0ax"]
+[ext_resource type="Texture2D" uid="uid://civjfkynn70ic" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Magenta/MediumArrow-Right-Click@2x.png" id="6_slge2"]
+[ext_resource type="Texture2D" uid="uid://tj4kiyi8v5by" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Blue/MediumArrow-Right-Idle@2x.png" id="7_cb8x7"]
+[ext_resource type="Texture2D" uid="uid://cpmgnvuq7i7fd" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Blue/MediumArrow-Left-Idle@2x.png" id="7_t6rlr"]
+[ext_resource type="Texture2D" uid="uid://batvn3nqmb1yw" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Magenta/MediumArrow-Left-Click@2x.png" id="9_062yi"]
+
+[sub_resource type="Animation" id="Animation_y45e6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mover:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_qi0ax")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("mover:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_jxc1q"]
+resource_name = "moverTutorial"
+length = 2.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mover:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("mover:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mover:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BotonDer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BotonDerClick:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BotonIzq:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BotonizqClick:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4rom"]
+_data = {
+"RESET": SubResource("Animation_y45e6"),
+"moverTutorial": SubResource("Animation_jxc1q")
+}
+
+[node name="tutorial_mover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 8.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="fondo_tutorial" parent="." instance=ExtResource("1_my1nr")]
+layout_mode = 1
+
+[node name="Moverse" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b4rom")
+}
+script = ExtResource("3_s71ir")
+
+[node name="mover" type="Sprite2D" parent="."]
+position = Vector2(126, 48)
+texture = ExtResource("6_qi0ax")
+hframes = 12
+
+[node name="BotonDer" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 154.0
+offset_top = 89.0
+offset_right = 192.0
+offset_bottom = 114.0
+texture = ExtResource("7_cb8x7")
+expand_mode = 1
+
+[node name="BotonDerClick" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 89.0
+offset_right = 192.0
+offset_bottom = 114.0
+texture = ExtResource("6_slge2")
+expand_mode = 1
+
+[node name="BotonIzq" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 89.0
+offset_right = 110.0
+offset_bottom = 114.0
+texture = ExtResource("7_t6rlr")
+expand_mode = 1
+
+[node name="BotonizqClick" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 72.0
+offset_top = 89.0
+offset_right = 110.0
+offset_bottom = 114.0
+texture = ExtResource("9_062yi")
+expand_mode = 1

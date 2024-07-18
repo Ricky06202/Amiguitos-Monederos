@@ -1,0 +1,178 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvnrth0yp1ibi"]
+
+[ext_resource type="PackedScene" uid="uid://6grig6s6p0lo" path="res://Interfaces/elemento_tutorial/fondo_tutorial_2.tscn" id="2_ofogc"]
+[ext_resource type="Texture2D" uid="uid://c6vd2el57axso" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Wall Jump (32x32).png" id="2_v8486"]
+[ext_resource type="Texture2D" uid="uid://dqswdvryoyxy6" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Jump (32x32).png" id="3_hc4nu"]
+[ext_resource type="Texture2D" uid="uid://cjex22144jr2h" path="res://recursos/Pixel Adventure/Main Characters/Ninja Frog/Run (32x32).png" id="4_ht2gt"]
+[ext_resource type="Script" path="res://Interfaces/animacionSaltoMuro.gd" id="5_xil53"]
+
+[sub_resource type="Animation" id="Animation_21r41"]
+resource_name = "saltarMuroTutorial"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mover:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("mover:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(86, 88), Vector2(136, 88), Vector2(161, 40), Vector2(179, 40)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mover:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.3, 2.6, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("salto:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.3, 1.5, 1.6, 1.7, 1.8, 2, 2.1, 2.2, 2.3, 2.6, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false, false, true, true, false, false, true, true, false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("salto:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.3, 1.5, 1.8, 2, 2.3, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(140.25, 84), Vector2(147, 74), Vector2(147, 68), Vector2(135, 57), Vector2(135, 51), Vector2(153, 39)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("salto_muro:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.5, 1.6, 1.7, 1.8, 2, 2.1, 2.2, 2.3, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false, false, true, true, false, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("salto_muro:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.6, 1.7, 2.1, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(152, 73), Vector2(152, 73), Vector2(131, 54), Vector2(131, 54), Vector2(131, 54)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("salto_muro:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.6, 1.7, 2.1, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("salto:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.3, 1.5, 1.8, 2, 2.1, 2.2, 2.3, 2.6, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, true, true, false, false, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_a5edu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mover:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0hej"]
+_data = {
+"RESET": SubResource("Animation_a5edu"),
+"saltarMuroTutorial": SubResource("Animation_21r41")
+}
+
+[node name="tutorial_wallJump" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fondo_tutorial2" parent="." instance=ExtResource("2_ofogc")]
+layout_mode = 1
+
+[node name="SaltarMuro" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r0hej")
+}
+script = ExtResource("5_xil53")
+
+[node name="salto_muro" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(137.802, 60.154)
+scale = Vector2(0.632813, 0.648438)
+texture = ExtResource("2_v8486")
+hframes = 5
+
+[node name="salto" type="Sprite2D" parent="."]
+position = Vector2(136.773, 58.6257)
+scale = Vector2(0.640625, 0.589844)
+texture = ExtResource("3_hc4nu")
+flip_h = true
+
+[node name="mover" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(148.841, 63.3459)
+scale = Vector2(0.671875, 0.65625)
+texture = ExtResource("4_ht2gt")
+hframes = 12

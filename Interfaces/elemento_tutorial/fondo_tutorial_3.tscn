@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlhdvvuae25ao"]
+
+[ext_resource type="PackedScene" uid="uid://cjki6oa0kc000" path="res://componentes/terreno/terreno.tscn" id="1_6k1py"]
+[ext_resource type="PackedScene" uid="uid://bcoyuls3e70hj" path="res://Interfaces/elemento_tutorial/panel.tscn" id="1_63ctg"]
+
+[node name="fondo_tutorial_3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" parent="." instance=ExtResource("1_63ctg")]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 11.0
+offset_right = 214.0
+offset_bottom = 128.0
+
+[node name="Terreno" parent="." instance=ExtResource("1_6k1py")]
+layer_0/tile_data = PackedInt32Array(393220, 524291, 3, 393221, 589827, 3, 393222, 589827, 3, 393223, 589827, 3, 393224, 589827, 3, 393225, 589827, 3, 393226, 589827, 3, 393227, 655363, 3)
