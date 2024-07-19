@@ -59,20 +59,20 @@ enemigo = ExtResource("6_td8iq")
 move_speed = 40.0
 
 [node name="Enemy3" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(1576.93, 1.54215e+08)
-velocity = Vector2(0, 549848)
+position = Vector2(1576.93, 2.70209e+10)
+velocity = Vector2(0, 7.29809e+06)
 enemigo = ExtResource("7_fw6wc")
 move_speed = 75.0
 
 [node name="Enemy4" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(951.582, 1.54215e+08)
-velocity = Vector2(0, 549848)
+position = Vector2(951.582, 2.70209e+10)
+velocity = Vector2(0, 7.29809e+06)
 enemigo = ExtResource("9_fgxa0")
 move_speed = 20.0
 
 [node name="Enemy5" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(21.9467, 1.54215e+08)
-velocity = Vector2(0, 549848)
+position = Vector2(21.9467, 2.70209e+10)
+velocity = Vector2(0, 7.29809e+06)
 
 [node name="MonedaOro" parent="." instance=ExtResource("10_eyps4")]
 position = Vector2(-620, 72)
