@@ -187,65 +187,65 @@ recolectable = ExtResource("6_7m3ol")
 [node name="Enemigos" type="Node" parent="."]
 
 [node name="Enemigo" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-3206, 31.9989)
+position = Vector2(-3206, 31.9999)
 enemigo = ExtResource("9_j7gdl")
 move_speed = 40.0
 
 [node name="Enemigo2" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-3644, -16.0031)
+position = Vector2(-3644, -16.0001)
 enemigo = ExtResource("9_j7gdl")
 move_speed = 40.0
 
 [node name="Enemigo3" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-2952, -0.00216699)
+position = Vector2(-2952, -7.32243e-05)
 enemigo = ExtResource("9_j7gdl")
 move_speed = 40.0
 
 [node name="Enemigo4" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-3459, -0.0153193)
+position = Vector2(-3459, -8.75592e-05)
 enemigo = ExtResource("9_j7gdl")
 move_speed = 40.0
 
 [node name="Enemigo5" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-2729, -16.0062)
+position = Vector2(-2729, -16.0001)
 enemigo = ExtResource("9_j7gdl")
 move_speed = 40.0
 
 [node name="Enemigo6" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-2455, -112.009)
+position = Vector2(-2455, -112.001)
 
 [node name="Enemigo7" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-1979, -144.008)
+position = Vector2(-1979, -144.001)
 
 [node name="Enemigo8" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-1427, 111.994)
+position = Vector2(-1427, 112)
 enemigo = ExtResource("10_pavj2")
 move_speed = 50.0
 
 [node name="Enemigo9" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-1054, 79.9936)
+position = Vector2(-1054, 79.9987)
 enemigo = ExtResource("10_3t1mo")
 move_speed = 75.0
 
 [node name="Enemigo10" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-705, -48.0064)
+position = Vector2(-705, -48.0004)
 enemigo = ExtResource("9_d3lpa")
 move_speed = 20.0
 
 [node name="Enemigo11" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(-178, 47.9835)
+position = Vector2(-178, 47.9996)
 
 [node name="Enemigo12" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(343, 111.998)
+position = Vector2(343, 112)
 enemigo = ExtResource("9_j7gdl")
 move_speed = 40.0
 
 [node name="Enemigo13" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(267, 111.997)
+position = Vector2(267, 112)
 enemigo = ExtResource("9_j7gdl")
 move_speed = 40.0
 
 [node name="Enemigo14" parent="Enemigos" instance=ExtResource("8_q77rt")]
-position = Vector2(136, 95.9956)
+position = Vector2(136, 95.9999)
 enemigo = ExtResource("10_3t1mo")
 move_speed = 75.0
