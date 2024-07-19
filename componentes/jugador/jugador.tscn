@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://coed18knxvhp3"]
+[gd_scene load_steps=49 format=3 uid="uid://coed18knxvhp3"]
 
 [ext_resource type="Script" path="res://componentes/jugador/jugador.gd" id="1_0b2vs"]
 [ext_resource type="Texture2D" uid="uid://cop1vjvxykrlo" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Run (32x32).png" id="3_2lalh"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cq248r3i0uema" path="res://componentes/interfaz/selector de transformacion/selector_de_transformacion.tscn" id="9_a4g81"]
 [ext_resource type="Script" path="res://componentes/vida.gd" id="9_nc8rq"]
 [ext_resource type="Script" path="res://componentes/hurtbox.gd" id="10_02jdp"]
+[ext_resource type="PackedScene" uid="uid://cclrqcxtnooiv" path="res://componentes/interfaz/perder/perder.tscn" id="10_rkaqa"]
 [ext_resource type="Script" path="res://componentes/hitbox.gd" id="11_jji8l"]
+[ext_resource type="PackedScene" uid="uid://b8p5vtoiocta2" path="res://componentes/interfaz/ganar/ganar.tscn" id="11_p4fld"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7qaw"]
 atlas = ExtResource("3_2lalh")
@@ -269,13 +271,12 @@ size = Vector2(8, 4)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
-velocity = Vector2(0, 784243)
 script = ExtResource("1_0b2vs")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b0cy4")
 animation = &"Quieto"
-frame_progress = 0.899389
+frame_progress = 0.306002
 offset = Vector2(0, -16)
 
 [node name="Colision" type="CollisionShape2D" parent="."]
@@ -291,6 +292,12 @@ process_mode = 3
 visible = false
 
 [node name="Selector de Transformacion" parent="CanvasLayer" instance=ExtResource("9_a4g81")]
+visible = false
+
+[node name="Perder" parent="CanvasLayer" instance=ExtResource("10_rkaqa")]
+visible = false
+
+[node name="Ganar" parent="CanvasLayer" instance=ExtResource("11_p4fld")]
 visible = false
 
 [node name="Vida" type="Node" parent="."]
@@ -315,6 +322,17 @@ script = ExtResource("11_jji8l")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_rmx8c")
 debug_color = Color(0.794236, 0.42567, 1.92523e-07, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -10)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 0.3
+drag_bottom_margin = 0.3
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [connection signal="sin_vida" from="Vida" to="." method="_on_vida_sin_vida"]
 [connection signal="realizar_dano" from="Hitbox" to="." method="_on_hitbox_realizar_dano"]

@@ -1,6 +1,12 @@
 @tool
 extends CharacterBody2D
 
+@export var gravedad_en_editor := true:
+	set(value):
+		gravedad_en_editor = value
+		velocity = Vector2()
+		move_and_slide() 
+
 @export var enemigo: Enemigo:
 	set(e):
 		enemigo = e
@@ -54,8 +60,12 @@ func _physics_process(delta):
 		move_and_slide() 
 
 	#cuando estamos editando el juego
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and  Engine.is_editor_hint() and not is_instance_of(get_parent(), SubViewport):
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Engine.is_editor_hint() and not is_instance_of(get_parent(), SubViewport) and gravedad_en_editor:
 		aplicar_gravedad(delta)
+		move_and_slide() 
+
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Engine.is_editor_hint():
+		velocity = Vector2()
 		move_and_slide() 
 
 func update_animations_enemy():
@@ -83,6 +93,9 @@ func aplicar_gravedad(delta):
 
 var hemos_muerto := false
 func _on_vida_sin_vida():
+	morir()
+
+func morir():
 	hemos_muerto = true
 	hitbox.queue_free()
 	hurtbox.queue_free()
@@ -90,8 +103,5 @@ func _on_vida_sin_vida():
 	var tween := get_tree().create_tween()
 	tween.tween_property(animacion, "modulate", Color.TRANSPARENT, 1)
 	await tween.finished
-	morir()
-
-func morir():
 	Estado.enemigo_derrotado.emit()
 	queue_free()

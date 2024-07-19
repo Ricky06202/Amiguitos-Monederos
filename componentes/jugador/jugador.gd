@@ -1,6 +1,12 @@
 @tool
 extends CharacterBody2D
 
+@export var gravedad_en_editor := true:
+	set(value):
+		gravedad_en_editor = value
+		velocity = Vector2()
+		move_and_slide() 
+
 @export var transformacion_actual: Transformacion = preload("res://datos/transformaciones/Humano.tres"):
 	set(t):
 		transformacion_actual = t
@@ -67,6 +73,10 @@ func _physics_process(delta):
 		aplicar_gravedad(delta)
 		move_and_slide()
 
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Engine.is_editor_hint():
+		velocity = Vector2()
+		move_and_slide() 
+
 func update_animations():
 	if not is_on_floor():
 		if transformacion_actual.puede_saltar_en_las_paredes and is_on_wall_only():
@@ -120,7 +130,7 @@ func _on_vida_sin_vida():
 	var tween := get_tree().create_tween()
 	tween.tween_property(animacion, "modulate", Color.TRANSPARENT, 1)
 	await tween.finished
-	Estado.perdimos.emit()
+	Estado.perder.emit()
 
 
 

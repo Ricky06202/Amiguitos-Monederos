@@ -45,7 +45,7 @@ horizontal_alignment = 1
 
 [node name="Volver al Punto de Control" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Volver al Punto de Control"
+text = "Cambiar Nivel"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer/VBoxContainer"]
 layout_mode = 2
