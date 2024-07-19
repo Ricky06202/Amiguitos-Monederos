@@ -8,8 +8,11 @@ extends CharacterBody2D
 
 var saltos_realizados := 0
 
-@export var move_speed: float
-@export var jump_speed: float
+@onready var hitbox : Hitbox= get_node("Hitbox")
+@onready var hurtbox : Hurtbox= get_node("Hurtbox")
+
+@export var move_speed: float = 100
+@export var jump_speed: float = 300
 @onready var animacion: AnimatedSprite2D = get_node("Animacion")
 @onready var colision: CollisionShape2D = get_node("Colision")
 var is_facing_right = true
@@ -34,17 +37,28 @@ func _ready():
 	if Engine.is_editor_hint(): return
 	inicializar()
 	Estado.cambiar_transformacion.connect(al_cambiar_transformacion)
+	set_physics_process(true)
 
 func al_cambiar_transformacion(transformacion: Transformacion):
 	transformacion_actual = transformacion
 
 func _physics_process(delta):
-	update_animations()
-	flip()
+	if is_instance_of(get_parent(), SubViewport):
+		animacion.play("Quieto")
+		set_physics_process(false)
+		return
+	
+	if not hemos_muerto:
+		update_animations()
+		flip()
 	#cuando estamos ejecutando el juego
 	if not Engine.is_editor_hint():
-		jump()
-		move_x()
+		if not hemos_muerto:
+			jump()
+			move_x()
+		else:
+			if is_on_floor():
+				velocity.x = 0
 		aplicar_gravedad(delta)
 		move_and_slide()
 		
@@ -94,3 +108,22 @@ func jump():
 func aplicar_gravedad(delta):
 	if not is_on_floor() or transformacion_actual.puede_saltar_en_las_paredes:
 		velocity.y += gravedad * delta
+
+var hemos_muerto:= false
+
+func _on_vida_sin_vida():
+	hemos_muerto = true
+	hitbox.queue_free()
+	hurtbox.queue_free()
+	transformacion_actual = preload("res://datos/transformaciones/Humano.tres")
+	animacion.play("Sufrir")
+	var tween := get_tree().create_tween()
+	tween.tween_property(animacion, "modulate", Color.TRANSPARENT, 1)
+	await tween.finished
+	Estado.perdimos.emit()
+
+
+
+func _on_hitbox_realizar_dano():
+	velocity.y = -jump_speed
+	saltos_realizados = 0

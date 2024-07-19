@@ -1,13 +1,17 @@
-[gd_scene load_steps=41 format=3 uid="uid://coed18knxvhp3"]
+[gd_scene load_steps=47 format=3 uid="uid://coed18knxvhp3"]
 
-[ext_resource type="Script" path="res://componentes/jugador/jugador.gd" id="1_hlt0w"]
+[ext_resource type="Script" path="res://componentes/jugador/jugador.gd" id="1_0b2vs"]
 [ext_resource type="Texture2D" uid="uid://cop1vjvxykrlo" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Run (32x32).png" id="3_2lalh"]
 [ext_resource type="Texture2D" uid="uid://ciu7uo63lrtju" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Fall (32x32).png" id="4_6vn7s"]
 [ext_resource type="Texture2D" uid="uid://ckxdihixv05kt" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Idle (32x32).png" id="5_bd84c"]
 [ext_resource type="Texture2D" uid="uid://sfb0gmd8hhbv" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Jump (32x32).png" id="6_a8uya"]
+[ext_resource type="PackedScene" uid="uid://bsh8cbkftyunb" path="res://componentes/interfaz/interfaz de estado/interfaz_de_estado.tscn" id="7_0bvqt"]
 [ext_resource type="Texture2D" uid="uid://b7l1iegxfobdv" path="res://recursos/Pixel Adventure/Main Characters/Pink Man/Hit (32x32).png" id="7_8y6j5"]
 [ext_resource type="PackedScene" uid="uid://ehc510jydbt0" path="res://componentes/interfaz/menu pausa/menu_pausa.tscn" id="8_u75fd"]
 [ext_resource type="PackedScene" uid="uid://cq248r3i0uema" path="res://componentes/interfaz/selector de transformacion/selector_de_transformacion.tscn" id="9_a4g81"]
+[ext_resource type="Script" path="res://componentes/vida.gd" id="9_nc8rq"]
+[ext_resource type="Script" path="res://componentes/hurtbox.gd" id="10_02jdp"]
+[ext_resource type="Script" path="res://componentes/hitbox.gd" id="11_jji8l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7qaw"]
 atlas = ExtResource("3_2lalh")
@@ -248,7 +252,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qxpd5")
 }],
-"loop": true,
+"loop": false,
 "name": &"Sufrir",
 "speed": 18.0
 }]
@@ -257,17 +261,21 @@ animations = [{
 radius = 6.0
 height = 20.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7qck"]
+size = Vector2(12, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmx8c"]
+size = Vector2(8, 4)
+
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 62
+collision_mask = 2
 velocity = Vector2(0, 784243)
-script = ExtResource("1_hlt0w")
-move_speed = 100.0
-jump_speed = 300.0
+script = ExtResource("1_0b2vs")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b0cy4")
-animation = &"Caer"
-frame_progress = 0.625634
+animation = &"Quieto"
+frame_progress = 0.899389
 offset = Vector2(0, -16)
 
 [node name="Colision" type="CollisionShape2D" parent="."]
@@ -277,8 +285,36 @@ shape = SubResource("CapsuleShape2D_06b7a")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
 
+[node name="Interfaz de Estado" parent="CanvasLayer" instance=ExtResource("7_0bvqt")]
+
 [node name="Menu Pausa" parent="CanvasLayer" instance=ExtResource("8_u75fd")]
 visible = false
 
 [node name="Selector de Transformacion" parent="CanvasLayer" instance=ExtResource("9_a4g81")]
 visible = false
+
+[node name="Vida" type="Node" parent="."]
+script = ExtResource("9_nc8rq")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("vida")]
+collision_mask = 0
+script = ExtResource("10_02jdp")
+vida = NodePath("../Vida")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_j7qck")
+debug_color = Color(0.991259, 0, 0.267899, 0.42)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("11_jji8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_rmx8c")
+debug_color = Color(0.794236, 0.42567, 1.92523e-07, 0.42)
+
+[connection signal="sin_vida" from="Vida" to="." method="_on_vida_sin_vida"]
+[connection signal="realizar_dano" from="Hitbox" to="." method="_on_hitbox_realizar_dano"]

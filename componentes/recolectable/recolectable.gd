@@ -34,4 +34,5 @@ func _on_body_entered(_body:Node2D):
 
 func obtenerMoneda():
 	#todo   particulas y sonido
+	Estado.moneda_obtenida.emit()
 	queue_free()
