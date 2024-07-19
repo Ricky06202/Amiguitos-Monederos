@@ -108,6 +108,7 @@ func jump():
 func aplicar_gravedad(delta):
 	if not is_on_floor() or transformacion_actual.puede_saltar_en_las_paredes:
 		velocity.y += gravedad * delta
+<<<<<<< Updated upstream
 
 var hemos_muerto:= false
 
@@ -127,3 +128,5 @@ func _on_vida_sin_vida():
 func _on_hitbox_realizar_dano():
 	velocity.y = -jump_speed
 	saltos_realizados = 0
+=======
+>>>>>>> Stashed changes
