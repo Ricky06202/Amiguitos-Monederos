@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dh4dga6l8eqab"]
+[gd_scene load_steps=17 format=3 uid="uid://dh4dga6l8eqab"]
 
 [ext_resource type="PackedScene" uid="uid://dxkm1dgigyi5v" path="res://componentes/fondo/fondo.tscn" id="1_o3xkn"]
 [ext_resource type="Texture2D" uid="uid://1f52ptropufo" path="res://recursos/Rocky Roads/Backgrounds/mountains_b.png" id="2_nbk4k"]
@@ -12,6 +12,16 @@
 [ext_resource type="Resource" uid="uid://ctrtg4rvoronw" path="res://datos/enemigos/Tronco.tres" id="9_y86nj"]
 [ext_resource type="Resource" uid="uid://b52p414l8jmpg" path="res://datos/enemigos/Slime.tres" id="10_jj3ff"]
 [ext_resource type="Resource" uid="uid://c7bxvnpmo3a58" path="res://datos/enemigos/Gallina.tres" id="11_o2gb3"]
+[ext_resource type="Script" path="res://componentes/hitbox.gd" id="13_fbnxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1k4s"]
+size = Vector2(248, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4i7x"]
+size = Vector2(494, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vddyg"]
+size = Vector2(832, 52)
 
 [node name="Nivel_tierra" type="Node2D"]
 texture_filter = 1
@@ -224,7 +234,7 @@ recolectable = ExtResource("6_2nr38")
 [node name="Enemigos" type="Node" parent="."]
 
 [node name="Enemigo" parent="Enemigos" instance=ExtResource("8_4njpd")]
-position = Vector2(3880, 463.999)
+position = Vector2(3880, 464)
 enemigo = ExtResource("9_y86nj")
 move_speed = 50.0
 
@@ -234,17 +244,17 @@ enemigo = ExtResource("10_jj3ff")
 move_speed = 20.0
 
 [node name="Enemigo3" parent="Enemigos" instance=ExtResource("8_4njpd")]
-position = Vector2(4481, 512)
+position = Vector2(4481, 511.999)
 enemigo = ExtResource("11_o2gb3")
 move_speed = 75.0
 
 [node name="Enemigo4" parent="Enemigos" instance=ExtResource("8_4njpd")]
-position = Vector2(5978, 495.999)
+position = Vector2(5978, 496)
 enemigo = ExtResource("9_k01ck")
 move_speed = 40.0
 
 [node name="Enemigo5" parent="Enemigos" instance=ExtResource("8_4njpd")]
-position = Vector2(5418, 495.999)
+position = Vector2(5418, 496)
 enemigo = ExtResource("9_y86nj")
 move_speed = 50.0
 
@@ -259,12 +269,12 @@ enemigo = ExtResource("9_y86nj")
 move_speed = 50.0
 
 [node name="Enemigo8" parent="Enemigos" instance=ExtResource("8_4njpd")]
-position = Vector2(2116, 431.997)
+position = Vector2(2116, 432)
 enemigo = ExtResource("9_k01ck")
 move_speed = 40.0
 
 [node name="Enemigo9" parent="Enemigos" instance=ExtResource("8_4njpd")]
-position = Vector2(2064, 320)
+position = Vector2(2064, 319.999)
 enemigo = ExtResource("9_k01ck")
 move_speed = 40.0
 
@@ -285,7 +295,7 @@ enemigo = ExtResource("10_jj3ff")
 move_speed = 20.0
 
 [node name="Enemigo14" parent="Enemigos" instance=ExtResource("8_4njpd")]
-position = Vector2(664, 175.999)
+position = Vector2(664, 176)
 enemigo = ExtResource("11_o2gb3")
 move_speed = 75.0
 
@@ -293,3 +303,23 @@ move_speed = 75.0
 position = Vector2(82, 112)
 enemigo = ExtResource("11_o2gb3")
 move_speed = 75.0
+
+[node name="Zona de Muerte" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("13_fbnxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona de Muerte"]
+position = Vector2(2574, 530)
+shape = SubResource("RectangleShape2D_h1k4s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Zona de Muerte"]
+position = Vector2(3051, 547)
+shape = SubResource("RectangleShape2D_h1k4s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Zona de Muerte"]
+position = Vector2(3578, 545)
+shape = SubResource("RectangleShape2D_t4i7x")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Zona de Muerte"]
+position = Vector2(5557, 626)
+shape = SubResource("RectangleShape2D_vddyg")

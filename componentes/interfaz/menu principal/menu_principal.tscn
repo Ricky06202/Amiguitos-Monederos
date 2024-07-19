@@ -3,8 +3,8 @@
 [ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_mrygd"]
 [ext_resource type="Script" path="res://componentes/interfaz/menu principal/menu_principal.gd" id="2_3wvht"]
 [ext_resource type="Texture2D" uid="uid://bobypyg0s43h4" path="res://recursos/Fondos Generados/Designer.jpeg" id="2_5ug01"]
+[ext_resource type="PackedScene" uid="uid://bnisklhaa1lcs" path="res://componentes/interfaz/selector de niveles/selector_de_niveles.tscn" id="3_6d6ga"]
 [ext_resource type="FontFile" uid="uid://btf7wssbwspfr" path="res://recursos/Tipografias/friendly-monster/FriendlyMonster-lgr0X.otf" id="3_a31ly"]
-[ext_resource type="PackedScene" uid="uid://cm162s67rl4et" path="res://niveles/Nivel_bosque/nivel_bosque.tscn" id="3_a38fa"]
 [ext_resource type="FontFile" uid="uid://c3xlnytn34h27" path="res://recursos/Tipografias/zt-shago/ZtShago-Black.ttf" id="4_3mu65"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fyv1j"]
@@ -29,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_mrygd")
 script = ExtResource("2_3wvht")
-nivel_a_cargar = ExtResource("3_a38fa")
+nivel_a_cargar = ExtResource("3_6d6ga")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

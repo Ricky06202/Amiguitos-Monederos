@@ -16,5 +16,9 @@ func _on_continuar_pressed():
 	pausar_despausar()
 
 func _on_salir_al_menu_principal_pressed():
-	Estado.pausar.emit()
+	pausar_despausar()
 	get_tree().change_scene_to_packed(Estado.menu_principal)
+
+func _on_volver_al_punto_de_control_pressed():
+	pausar_despausar()
+	get_tree().change_scene_to_packed(Estado.selector_niveles)

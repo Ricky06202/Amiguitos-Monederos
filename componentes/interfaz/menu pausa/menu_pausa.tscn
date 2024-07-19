@@ -64,5 +64,6 @@ text = "Continuar"
 layout_mode = 2
 text = "Salir al Menu Principal"
 
+[connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/Volver al Punto de Control" to="." method="_on_volver_al_punto_de_control_pressed"]
 [connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/HBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/Salir al Menu Principal" to="." method="_on_salir_al_menu_principal_pressed"]
