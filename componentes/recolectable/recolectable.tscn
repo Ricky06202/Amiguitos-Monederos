@@ -7,6 +7,7 @@
 radius = 7.0
 
 [node name="Recolectable" type="Area2D" groups=["Monedas"]]
+texture_filter = 1
 collision_layer = 4
 script = ExtResource("1_wlj8w")
 

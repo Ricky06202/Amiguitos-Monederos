@@ -168,7 +168,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjkha"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4hl7"]
 radius = 7.0
 height = 20.0
 
@@ -179,6 +179,7 @@ size = Vector2(18, 14.25)
 size = Vector2(22, 5)
 
 [node name="Enemigo" type="CharacterBody2D" groups=["Enemigos"]]
+texture_filter = 1
 collision_layer = 8
 collision_mask = 10
 script = ExtResource("1_fxtdm")
@@ -189,14 +190,14 @@ move_speed = 30.0
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_pluqx")
 animation = &"Avanzar"
-frame_progress = 0.899984
+frame_progress = 0.0991793
 offset = Vector2(0, -15)
 flip_h = true
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_tjkha")
+shape = SubResource("CapsuleShape2D_c4hl7")
 
 [node name="RightCollision" type="RayCast2D" parent="."]
 position = Vector2(17, 0)

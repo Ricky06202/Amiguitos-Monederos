@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://3mqi8vc7i62o" path="res://recursos/Rocky Roads/Deco/tree.png" id="5_fl8ip"]
 [ext_resource type="PackedScene" uid="uid://bq45ujb3mhw4b" path="res://niveles/Nivel_desierto/nivel_desierto.tscn" id="5_xsbx1"]
 [ext_resource type="PackedScene" uid="uid://dh4dga6l8eqab" path="res://niveles/Nivel_tierra/nivel_tierra.tscn" id="6_0owfy"]
-[ext_resource type="Texture2D" uid="uid://emsfw6xhjvl7" path="res://recursos/Rocky Roads/Tilesets/hombre de nieve.png" id="6_h0oha"]
 [ext_resource type="Texture2D" uid="uid://f61ffgrp2l1s" path="res://recursos/Rocky Roads/Deco/cactus.png" id="7_7upaf"]
 [ext_resource type="Texture2D" uid="uid://ci2kosnhhqcuv" path="res://recursos/Rocky Roads/Deco/cueva.jpg" id="8_7otbo"]
+[ext_resource type="Texture2D" uid="uid://5ldhrorlr7ub" path="res://recursos/Rocky Roads/Deco/hombre de nieve.png" id="10_qq3a8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_45ayb"]
 font = ExtResource("4_erdic")
@@ -94,7 +94,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Nieve"
-icon = ExtResource("6_h0oha")
+icon = ExtResource("10_qq3a8")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
