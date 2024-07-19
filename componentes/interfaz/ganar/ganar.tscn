@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8p5vtoiocta2"]
+
+[ext_resource type="FontFile" uid="uid://btf7wssbwspfr" path="res://recursos/Tipografias/friendly-monster/FriendlyMonster-lgr0X.otf" id="1_6fury"]
+[ext_resource type="Script" path="res://componentes/interfaz/ganar/ganar.gd" id="1_ftgiw"]
+[ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_w8lvt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpwgb"]
+font = ExtResource("1_6fury")
+font_size = 20
+
+[node name="Ganar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_w8lvt")
+script = ExtResource("1_ftgiw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Has Ganado"
+label_settings = SubResource("LabelSettings_mpwgb")
+horizontal_alignment = 1
+
+[node name="Elegir Nivel" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Elegir Nivel"
+
+[node name="Salir al Menu Principal" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Salir al Menu Principal"
+
+[connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/Elegir Nivel" to="." method="_on_elegir_nivel_pressed"]
+[connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/Salir al Menu Principal" to="." method="_on_salir_al_menu_principal_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cm162s67rl4et"]
+[gd_scene load_steps=17 format=3 uid="uid://cm162s67rl4et"]
 
 [ext_resource type="PackedScene" uid="uid://dxkm1dgigyi5v" path="res://componentes/fondo/fondo.tscn" id="2_n8f76"]
 [ext_resource type="Texture2D" uid="uid://b7cvy7hietsgu" path="res://recursos/Rocky Roads/Backgrounds/trees.png" id="3_6l3hl"]
@@ -12,6 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://du67jm07eq6or" path="res://componentes/recolectable/recolectable.tscn" id="10_eyps4"]
 [ext_resource type="Resource" uid="uid://bmikje40vkdqa" path="res://datos/recolectables/Moneda de Oro.tres" id="11_wn8y2"]
 [ext_resource type="Resource" uid="uid://llwn3x8kp5uw" path="res://datos/recolectables/Moneda de Plata.tres" id="12_xntdd"]
+[ext_resource type="Script" path="res://componentes/hitbox.gd" id="13_w4sv7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cwq06"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc7ak"]
+size = Vector2(202, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihi3q"]
+size = Vector2(336, 40)
 
 [node name="Bosque" type="Node2D"]
 texture_filter = 1
@@ -26,178 +35,211 @@ color_tierra = Color(0.254902, 0.368627, 0.34902, 1)
 imagen_fondo = ExtResource("3_6l3hl")
 
 [node name="Player" parent="." instance=ExtResource("4_uqbwd")]
-position = Vector2(104, 138.998)
-velocity = Vector2(0, 0)
+position = Vector2(104, 164.999)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -10)
-zoom = Vector2(0.5, 0.5)
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_top_margin = 0.3
-drag_bottom_margin = 0.3
-editor_draw_limits = true
-editor_draw_drag_margin = true
+[node name="Monedas" type="Node" parent="."]
 
-[node name="Enemy1" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(1196.2, 180.995)
-velocity = Vector2(0, 0)
-enemigo = ExtResource("6_a6fuh")
-move_speed = 50.0
-
-[node name="Enemy2" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(596.271, 116.998)
-velocity = Vector2(0, 0)
-enemigo = ExtResource("6_td8iq")
-move_speed = 40.0
-
-[node name="Enemy6" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(644.271, 117)
-velocity = Vector2(0, 0)
-enemigo = ExtResource("6_td8iq")
-move_speed = 40.0
-
-[node name="Enemy3" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(1576.93, 2.70209e+10)
-velocity = Vector2(0, 7.29809e+06)
-enemigo = ExtResource("7_fw6wc")
-move_speed = 75.0
-
-[node name="Enemy4" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(951.582, 2.70209e+10)
-velocity = Vector2(0, 7.29809e+06)
-enemigo = ExtResource("9_fgxa0")
-move_speed = 20.0
-
-[node name="Enemy5" parent="." instance=ExtResource("5_yhmrt")]
-position = Vector2(21.9467, 2.70209e+10)
-velocity = Vector2(0, 7.29809e+06)
-
-[node name="MonedaOro" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaOro" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(-620, 72)
 recolectable = ExtResource("11_wn8y2")
 
-[node name="MonedaOro2" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaOro2" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(1990, 341)
 recolectable = ExtResource("11_wn8y2")
 
-[node name="MonedaOro3" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaOro3" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(3161, 439)
 recolectable = ExtResource("11_wn8y2")
 
-[node name="MonedaOro4" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaOro4" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(3160, 182)
 recolectable = ExtResource("11_wn8y2")
 
-[node name="MonedaOro5" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaOro5" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2323, 271)
 recolectable = ExtResource("11_wn8y2")
 
-[node name="MonedaPlata" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(448, 137)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata2" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata2" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(518, 121)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata3" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata3" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(720, 121)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata4" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata4" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(785, 137)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata5" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata5" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(840, 152)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata6" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata6" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(1104, 184)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata7" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata7" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(1304, 184)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata8" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata8" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(1440, 200)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata9" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata9" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(1640, 232)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata10" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata10" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(1752, 216)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata11" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata11" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(1824, 168)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata12" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata12" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2000, 232)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata13" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata13" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2128, 216)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata14" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata14" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2256, 184)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata15" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata15" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2424, 200)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata16" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata16" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2456, 200)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata17" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata17" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2392, 200)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata18" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata18" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2848, 408)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata19" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata19" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2880, 408)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata20" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata20" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2816, 408)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata21" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata21" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(944, 184)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata22" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata22" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(976, 184)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata23" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata23" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(912, 184)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata24" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata24" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(-344, 88)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata25" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata25" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(-312, 88)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata26" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata26" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(-376, 88)
 recolectable = ExtResource("12_xntdd")
 
-[node name="MonedaPlata27" parent="." instance=ExtResource("10_eyps4")]
+[node name="MonedaPlata27" parent="Monedas" instance=ExtResource("10_eyps4")]
 position = Vector2(2584, 344)
 recolectable = ExtResource("12_xntdd")
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="Enemy1" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(1208, 180.999)
+enemigo = ExtResource("6_a6fuh")
+move_speed = 50.0
+
+[node name="Enemy9" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(1862, 181)
+enemigo = ExtResource("6_a6fuh")
+move_speed = 50.0
+
+[node name="Enemy2" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(351, 165)
+enemigo = ExtResource("6_td8iq")
+move_speed = 40.0
+
+[node name="Enemy6" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(643, 117)
+enemigo = ExtResource("6_td8iq")
+move_speed = 40.0
+
+[node name="Enemy3" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(1607, 244.998)
+enemigo = ExtResource("7_fw6wc")
+move_speed = 75.0
+
+[node name="Enemy4" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(3118, 452.999)
+enemigo = ExtResource("9_fgxa0")
+move_speed = 20.0
+
+[node name="Enemy10" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(947, 196.998)
+enemigo = ExtResource("9_fgxa0")
+move_speed = 20.0
+
+[node name="Enemy5" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(21.947, 117)
+
+[node name="Enemy7" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(-400.834, 100.999)
+
+[node name="Enemy8" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(-211, 100.999)
+
+[node name="Enemy11" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(2553, 196.998)
+enemigo = ExtResource("7_fw6wc")
+move_speed = 75.0
+
+[node name="Enemy13" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(2974, 197)
+enemigo = ExtResource("7_fw6wc")
+move_speed = 75.0
+
+[node name="Enemy12" parent="Enemigos" instance=ExtResource("5_yhmrt")]
+position = Vector2(2727, 197)
+enemigo = ExtResource("9_fgxa0")
+move_speed = 20.0
+
+[node name="Zonas de muerte" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("13_w4sv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zonas de muerte"]
+position = Vector2(850, 519)
+shape = SubResource("WorldBoundaryShape2D_cwq06")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Zonas de muerte"]
+position = Vector2(768, 242)
+shape = SubResource("RectangleShape2D_qc7ak")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Zonas de muerte"]
+position = Vector2(1209, 289)
+shape = SubResource("RectangleShape2D_ihi3q")

@@ -1,0 +1,138 @@
+[gd_scene load_steps=14 format=3 uid="uid://bnisklhaa1lcs"]
+
+[ext_resource type="Script" path="res://componentes/interfaz/selector de niveles/selector_de_niveles.gd" id="1_b70lb"]
+[ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_ktci4"]
+[ext_resource type="Texture2D" uid="uid://dqcuulif7dk3e" path="res://recursos/Fondos Generados/Designer (1).jpeg" id="2_od61h"]
+[ext_resource type="PackedScene" uid="uid://cm162s67rl4et" path="res://niveles/Nivel_bosque/nivel_bosque.tscn" id="3_op3va"]
+[ext_resource type="FontFile" uid="uid://btf7wssbwspfr" path="res://recursos/Tipografias/friendly-monster/FriendlyMonster-lgr0X.otf" id="4_erdic"]
+[ext_resource type="PackedScene" uid="uid://6gdy5fhg7jil" path="res://niveles/Nivel_nieve/nivel_nieve.tscn" id="4_yark7"]
+[ext_resource type="Texture2D" uid="uid://3mqi8vc7i62o" path="res://recursos/Rocky Roads/Deco/tree.png" id="5_fl8ip"]
+[ext_resource type="PackedScene" uid="uid://bq45ujb3mhw4b" path="res://niveles/Nivel_desierto/nivel_desierto.tscn" id="5_xsbx1"]
+[ext_resource type="PackedScene" uid="uid://dh4dga6l8eqab" path="res://niveles/Nivel_tierra/nivel_tierra.tscn" id="6_0owfy"]
+[ext_resource type="Texture2D" uid="uid://emsfw6xhjvl7" path="res://recursos/Rocky Roads/Tilesets/hombre de nieve.png" id="6_h0oha"]
+[ext_resource type="Texture2D" uid="uid://f61ffgrp2l1s" path="res://recursos/Rocky Roads/Deco/cactus.png" id="7_7upaf"]
+[ext_resource type="Texture2D" uid="uid://ci2kosnhhqcuv" path="res://recursos/Rocky Roads/Deco/cueva.jpg" id="8_7otbo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_45ayb"]
+font = ExtResource("4_erdic")
+font_size = 20
+
+[node name="Selector de Niveles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ktci4")
+script = ExtResource("1_b70lb")
+bosque = ExtResource("3_op3va")
+nieve = ExtResource("4_yark7")
+desierto = ExtResource("5_xsbx1")
+cueva = ExtResource("6_0owfy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_od61h")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.5
+offset_top = 2.0
+offset_right = 77.5
+offset_bottom = 28.0
+grow_horizontal = 2
+text = "Seleccione un Nivel"
+label_settings = SubResource("LabelSettings_45ayb")
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -33.0
+offset_right = 68.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Bosque" type="Button" parent="TextureRect/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bosque"
+icon = ExtResource("5_fl8ip")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Nieve" type="Button" parent="TextureRect/Panel/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Nieve"
+icon = ExtResource("6_h0oha")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Desierto" type="Button" parent="TextureRect/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Desierto"
+icon = ExtResource("7_7upaf")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Cueva" type="Button" parent="TextureRect/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cueva"
+icon = ExtResource("8_7otbo")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Volver" type="Button" parent="TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -25.0
+offset_right = 43.0
+offset_bottom = -2.0
+grow_vertical = 0
+text = "Volver"
+
+[connection signal="pressed" from="TextureRect/Panel/GridContainer/Bosque" to="." method="_on_bosque_pressed"]
+[connection signal="pressed" from="TextureRect/Panel/GridContainer/Nieve" to="." method="_on_nieve_pressed"]
+[connection signal="pressed" from="TextureRect/Panel/GridContainer/Desierto" to="." method="_on_desierto_pressed"]
+[connection signal="pressed" from="TextureRect/Panel/GridContainer/Cueva" to="." method="_on_cueva_pressed"]
+[connection signal="pressed" from="TextureRect/Panel/Volver" to="." method="_on_volver_pressed"]
