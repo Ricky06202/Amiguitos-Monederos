@@ -216,5 +216,5 @@ move_speed = 75.0
 
 [node name="Enemy12" parent="Enemigos" instance=ExtResource("5_yhmrt")]
 position = Vector2(2727, 196.998)
-enemigo = ExtResource("7_fw6wc")
-move_speed = 75.0
+enemigo = ExtResource("9_fgxa0")
+move_speed = 20.0
