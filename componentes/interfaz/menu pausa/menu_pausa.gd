@@ -1,14 +1,11 @@
 extends Control
 
-@export var menu_principal: PackedScene = load("res://componentes/interfaz/menu principal/menu_principal.tscn")
-
 func _ready():
 	Estado.pausar.connect(pausar_despausar)
 
 func pausar_despausar():
 	get_tree().paused = !get_tree().paused
 	visible = !visible
-	print(get_tree().paused)
 
 func _input(_event):
 	if get_tree().paused and not visible: return
@@ -20,4 +17,8 @@ func _on_continuar_pressed():
 
 func _on_salir_al_menu_principal_pressed():
 	pausar_despausar()
-	get_tree().change_scene_to_packed(menu_principal)
+	get_tree().change_scene_to_packed(Estado.menu_principal)
+
+func _on_volver_al_punto_de_control_pressed():
+	pausar_despausar()
+	get_tree().change_scene_to_packed(Estado.selector_niveles)
