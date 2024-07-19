@@ -13,7 +13,7 @@ config_version=5
 config/name="Amiguitos Monederos"
 run/main_scene="res://componentes/interfaz/menu principal/menu_principal.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://recursos/Fondos Generados/_b7356621-0954-4d34-a618-9f7d9fba66dc.jpeg"
 
 [autoload]
 
