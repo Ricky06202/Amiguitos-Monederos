@@ -19,4 +19,5 @@ offset_right = 212.0
 offset_bottom = 122.0
 
 [node name="Terreno" parent="." instance=ExtResource("3_dmuuu")]
+texture_filter = 1
 layer_0/tile_data = PackedInt32Array(262149, 524291, 3, 262150, 589827, 3, 262151, 655363, 3, 262152, 524291, 3, 262153, 589827, 3, 262154, 655363, 3)

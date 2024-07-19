@@ -168,7 +168,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7h5u1"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjkha"]
 radius = 7.0
 height = 20.0
 
@@ -196,7 +196,7 @@ flip_h = true
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_7h5u1")
+shape = SubResource("CapsuleShape2D_tjkha")
 
 [node name="RightCollision" type="RayCast2D" parent="."]
 position = Vector2(17, 0)

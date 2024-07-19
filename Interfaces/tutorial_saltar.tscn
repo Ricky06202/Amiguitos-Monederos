@@ -221,15 +221,18 @@ script = ExtResource("2_yc8ku")
 
 [node name="Salto_subida" type="Sprite2D" parent="."]
 visible = false
+texture_filter = 1
 position = Vector2(131, 44.4167)
 texture = ExtResource("2_o5wch")
 
 [node name="Salto_bajada" type="Sprite2D" parent="."]
 visible = false
+texture_filter = 1
 position = Vector2(131, 37)
 texture = ExtResource("3_d08ja")
 
 [node name="Quieto" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(131, 48)
 texture = ExtResource("3_t128b")
 hframes = 11

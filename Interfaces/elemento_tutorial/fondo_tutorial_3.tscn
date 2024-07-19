@@ -19,4 +19,5 @@ offset_right = 214.0
 offset_bottom = 128.0
 
 [node name="Terreno" parent="." instance=ExtResource("1_6k1py")]
+texture_filter = 1
 layer_0/tile_data = PackedInt32Array(393220, 524291, 3, 393221, 589827, 3, 393222, 589827, 3, 393223, 589827, 3, 393224, 589827, 3, 393225, 589827, 3, 393226, 589827, 3, 393227, 655363, 3)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://cuapbe4sbg6wr"]
+[gd_scene load_steps=20 format=3 uid="uid://bs77phcbf0b4e"]
 
+[ext_resource type="Theme" uid="uid://cpv3kem5xyfnc" path="res://componentes/interfaz/tema_interfaces.tres" id="1_eu17p"]
 [ext_resource type="PackedScene" uid="uid://cgav522j7mpxm" path="res://Interfaces/tutorial_mover.tscn" id="1_luf5q"]
 [ext_resource type="Texture2D" uid="uid://b00tpevmvlx66" path="res://recursos/Basic GUI/ButtonsIcons/IconButton_Small_Orange_Square.png" id="1_oav26"]
 [ext_resource type="Script" path="res://Interfaces/InterfazTutoriales.gd" id="1_oh1up"]
@@ -11,8 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dbgr2wd0yf3r6" path="res://Interfaces/tutorial_agacharse.tscn" id="7_nktfa"]
 [ext_resource type="PackedScene" uid="uid://cvnrth0yp1ibi" path="res://Interfaces/tutorial_wall_jump.tscn" id="8_72lyi"]
 [ext_resource type="Texture2D" uid="uid://l2hdqo7u32wq" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Magenta/Cross-Click@2x.png" id="10_phfqk"]
-[ext_resource type="Texture2D" uid="uid://3mn477xsoh4b" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Magenta/Exit-Idle@2x.png" id="11_rt8et"]
-[ext_resource type="Texture2D" uid="uid://bi5wyjvcb7ws1" path="res://recursos/Prinbles Buttons Cartoon II/png@2x/Buttons/Square-Icon-Magenta/Exit-Click@2x.png" id="12_vgx2h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2ec4"]
 texture = ExtResource("2_1qfwp")
@@ -35,15 +34,6 @@ texture = ExtResource("10_phfqk")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1omtv"]
 texture = ExtResource("10_phfqk")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hfc0q"]
-texture = ExtResource("11_rt8et")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plece"]
-texture = ExtResource("12_vgx2h")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7xaqq"]
-texture = ExtResource("12_vgx2h")
-
 [node name="Tutoriales" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -51,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_eu17p")
 script = ExtResource("1_oh1up")
 
 [node name="Fondo" type="TextureRect" parent="."]
@@ -66,63 +57,11 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = 6.0
 offset_right = 73.0
-offset_bottom = 139.0
+offset_bottom = 142.0
 texture = ExtResource("1_oav26")
 expand_mode = 1
 
-[node name="BotonesTutoriales" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 23.0
-offset_right = 66.0
-offset_bottom = 167.0
-theme_override_constants/separation = 8
-
-[node name="Moverse" type="Button" parent="BotonesTutoriales"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 6
-theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0ng5b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
-text = "Moverse"
-
-[node name="Saltar" type="Button" parent="BotonesTutoriales"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 6
-theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_uoyn5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
-text = "Saltar"
-
-[node name="DobleSalto" type="Button" parent="BotonesTutoriales"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 6
-theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_uoyn5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
-text = "Doble 
-Salto"
-
-[node name="SaltoMuro" type="Button" parent="BotonesTutoriales"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 6
-theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_uoyn5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
-text = "Saltar entre 
-muros"
-
-[node name="PasarBajo" type="Button" parent="BotonesTutoriales"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 6
-theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_uoyn5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
-text = "Pasar sobre 
-zonas pequeñas"
-
 [node name="tutorial_mover" parent="." instance=ExtResource("1_luf5q")]
-visible = false
 layout_mode = 1
 offset_left = 40.0
 offset_top = 5.0
@@ -152,11 +91,68 @@ offset_right = 37.0
 offset_bottom = 4.0
 
 [node name="tutorial_wallJump" parent="." instance=ExtResource("8_72lyi")]
+visible = false
 layout_mode = 1
 offset_left = 27.0
 offset_top = 1.0
 offset_right = 27.0
 offset_bottom = 1.0
+
+[node name="BotonesTutoriales" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 66.0
+offset_bottom = 141.0
+theme_override_constants/separation = 8
+
+[node name="Moverse" type="Button" parent="BotonesTutoriales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0ng5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
+text = "Moverse"
+
+[node name="Saltar" type="Button" parent="BotonesTutoriales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uoyn5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
+text = "Saltar"
+
+[node name="DobleSalto" type="Button" parent="BotonesTutoriales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uoyn5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
+text = "Doble 
+Salto"
+
+[node name="SaltoMuro" type="Button" parent="BotonesTutoriales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uoyn5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
+text = "Saltar entre 
+muros"
+
+[node name="PasarBajo" type="Button" parent="BotonesTutoriales"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxTexture_u2ec4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uoyn5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p6ir5")
+text = "Pasar sobre 
+zonas pequeñas"
 
 [node name="Cerrar" type="Button" parent="."]
 layout_mode = 0
@@ -168,20 +164,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_latex")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ipk82")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_1omtv")
 
-[node name="Regresar" type="Button" parent="."]
-layout_mode = 0
-offset_left = 235.0
-offset_top = 125.0
-offset_right = 254.0
-offset_bottom = 143.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_hfc0q")
-theme_override_styles/hover = SubResource("StyleBoxTexture_plece")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_7xaqq")
-
 [connection signal="pressed" from="BotonesTutoriales/Moverse" to="." method="_on_moverse_pressed"]
 [connection signal="pressed" from="BotonesTutoriales/Saltar" to="." method="_on_saltar_pressed"]
 [connection signal="pressed" from="BotonesTutoriales/DobleSalto" to="." method="_on_doble_salto_pressed"]
 [connection signal="pressed" from="BotonesTutoriales/SaltoMuro" to="." method="_on_salto_muro_pressed"]
 [connection signal="pressed" from="BotonesTutoriales/PasarBajo" to="." method="_on_pasar_bajo_pressed"]
 [connection signal="pressed" from="Cerrar" to="." method="_on_cerrar_pressed"]
-[connection signal="pressed" from="Regresar" to="." method="_on_regresar_pressed"]

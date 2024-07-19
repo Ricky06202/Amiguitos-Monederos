@@ -4,6 +4,21 @@
 [ext_resource type="Script" path="res://Interfaces/animacionDobleSalto.gd" id="2_g6gpw"]
 [ext_resource type="Texture2D" uid="uid://dvirec8v7rg60" path="res://recursos/Rocky Roads/Enemies/chicken.png" id="2_j0xs7"]
 
+[sub_resource type="Animation" id="Animation_c7w1b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gallina:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_xby61"]
 resource_name = "dobleSaltoTutorial"
 length = 2.0
@@ -33,21 +48,6 @@ tracks/1/keys = {
 "values": [Vector2(127, 79), Vector2(127, 79), Vector2(127, 73), Vector2(127, 55), Vector2(127, 56), Vector2(127, 29), Vector2(127, 80)]
 }
 
-[sub_resource type="Animation" id="Animation_c7w1b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Gallina:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m5p6n"]
 _data = {
 "RESET": SubResource("Animation_c7w1b"),
@@ -72,6 +72,7 @@ libraries = {
 script = ExtResource("2_g6gpw")
 
 [node name="Gallina" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(127, 79)
 texture = ExtResource("2_j0xs7")
 hframes = 7

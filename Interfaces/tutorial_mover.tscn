@@ -153,6 +153,7 @@ libraries = {
 script = ExtResource("3_s71ir")
 
 [node name="mover" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(126, 48)
 texture = ExtResource("6_qi0ax")
 hframes = 12

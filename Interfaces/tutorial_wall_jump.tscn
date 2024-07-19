@@ -162,6 +162,7 @@ script = ExtResource("5_xil53")
 
 [node name="salto_muro" type="Sprite2D" parent="."]
 visible = false
+texture_filter = 1
 position = Vector2(137.391, 59.7826)
 scale = Vector2(0.632813, 0.648438)
 texture = ExtResource("2_v8486")
@@ -170,11 +171,13 @@ hframes = 5
 
 [node name="salto" type="Sprite2D" parent="."]
 visible = false
+texture_filter = 1
 position = Vector2(150, 49.5882)
 scale = Vector2(0.640625, 0.589844)
 texture = ExtResource("3_hc4nu")
 
 [node name="mover" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(86, 88)
 scale = Vector2(0.671875, 0.65625)
 texture = ExtResource("4_ht2gt")

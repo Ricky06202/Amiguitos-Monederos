@@ -1,5 +1,7 @@
 extends Control
 
+@onready var tutoriales: Control = get_node("Tutoriales")
+
 func _ready():
 	Estado.pausar.connect(pausar_despausar)
 
@@ -22,3 +24,7 @@ func _on_salir_al_menu_principal_pressed():
 func _on_volver_al_punto_de_control_pressed():
 	pausar_despausar()
 	get_tree().change_scene_to_packed(Estado.selector_niveles)
+
+
+func _on_guia_pressed():
+	tutoriales.visible = true
